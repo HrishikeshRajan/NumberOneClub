@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 function SideSheet() {
   return (
-    <Sheet key={'left'}>
+    <Sheet key={'top'}>
    <SheetTrigger className='flex lg:hidden absolute top-5 left-5 p-2 focus:outline-none focus-visible:outline-none active:scale-90 transition-transform duration-200 ease-in-out focus:ring-0'>
       <Image
         src="/breadCrum.svg"
@@ -23,7 +23,7 @@ function SideSheet() {
       />
     </SheetTrigger>
       
-      <SheetContent side={'left'} className="focus:outline-none">
+      <SheetContent side={'top'} className="focus:outline-none">
         <SheetHeader>
           <SheetTitle>Are you absolutely sure?</SheetTitle>
           <SheetDescription>
