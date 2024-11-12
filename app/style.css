@@ -1,0 +1,30 @@
+/* Navbar */
+.nav-text {
+    font-size: clamp(18px, 24.47px, 26px);
+    line-height: clamp(24px, 31.03px, 34px);
+    font-weight: 600;
+  }
+
+
+
+.nav-btn {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.35rem;
+    padding: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .nav-btn {
+        font-size: 1.125rem;
+        line-height: 1.4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-btn {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+}
