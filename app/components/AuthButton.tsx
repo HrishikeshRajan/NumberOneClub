@@ -10,8 +10,8 @@ export default function AuthButtons() {
     <div className='hidden lg:flex items-center space-x-4'>
       <Button 
         variant={'ghost'} 
-        className={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn
-          ${activeButton === 'signup' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'}`}
+        className={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
+          ${activeButton === 'signup' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'} hover:text-white`}
         asChild
         onClick={() => setActiveButton('signup')}
       >
@@ -20,8 +20,8 @@ export default function AuthButtons() {
 
       <Button 
         variant={'ghost'} 
-        className={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn
-          ${activeButton === 'login' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'}`}
+        className={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
+          ${activeButton === 'login' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'} hover:text-white`}
         asChild
         onClick={() => setActiveButton('login')}
       >
