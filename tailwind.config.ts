@@ -73,6 +73,9 @@ export default {
 			medium: '500',
 			bold: '700',
 		  },
+		  backgroundImage: {
+			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
+		  },
   	},
 
   },

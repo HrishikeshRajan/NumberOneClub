@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${euclid.variable} antialiased`}
+        className={` ${euclid.variable} bg-main-gradient bg-no-repeat antialiased`}
       >
         {children}
       </body>
