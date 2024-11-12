@@ -2,9 +2,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
 import { NavLinks } from './NavLinks'
-
+import AuthButtons from './AuthButton'
 function Navbar() {
     return (
         <header className='w-full  text-white px-4 py-4'>
@@ -29,13 +28,7 @@ function Navbar() {
 
                 {/* Auth Buttons - Hidden on Mobile */}
                 <div className='hidden lg:flex items-center space-x-4'>
-                    <Button variant={'ghost'}  className='border-2 rounded-3xl hover:bg-Skobeloff text-Skobeloff border-Skobeloff nav-btn hover:text-white' asChild>
-                        <Link href="#" >Sign Up</Link>
-                    </Button>
-
-                    <Button variant={'ghost'} className='border-2 rounded-3xl hover:bg-Skobeloff text text-Skobeloff border-Skobeloff nav-btn hover:text-white'  asChild>
-                        <Link href="#" className='rounded-3xl'>Login</Link>
-                    </Button>
+                   <AuthButtons />
                 </div>
             </nav>
         </header>
