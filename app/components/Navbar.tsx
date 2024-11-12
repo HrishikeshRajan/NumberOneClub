@@ -7,9 +7,9 @@ import AuthButtons from './AuthButton'
 function Navbar() {
     return (
         <header className='w-full  text-white px-4 py-4'>
-            <nav className='max-w-7xl mx-auto flex items-center justify-center lg:justify-between text-Skobeloff'  aria-label="Main navigation">
+            <nav className='max-w-7xl  mx-auto flex items-center justify-center lg:justify-between text-Skobeloff'  aria-label="Main navigation">
                 {/* Logo Section */}
-                <div className='flex-shrink-0'>
+                <div className=' flex items-center bg-dark gap-20'>
                     <Link href="/">
                         <Image
                             src="/logo.svg"
@@ -19,12 +19,15 @@ function Navbar() {
                             className=' w-20 h-20 lg:w-auto transition-all duration-300'
                             priority />
                     </Link>
+                    <div className={`hidden lg:flex items-center space-x-6 font-euclid font-bold`}>
+                        <NavLinks className={`hidden md:flex items-center space-x-6 font-euclid`} />
+                    </div>
                 </div>
 
                 {/* Navigation Links - Hidden on Mobile */}
-                <div className={`hidden lg:flex items-center space-x-6 font-euclid font-bold`}>
+                {/* <div className={`hidden lg:flex items-center space-x-6 font-euclid font-bold`}>
                     <NavLinks className={`hidden md:flex items-center space-x-6 font-euclid`} />
-                </div>
+                </div> */}
 
                 {/* Auth Buttons - Hidden on Mobile */}
                 <div className='hidden lg:flex items-center space-x-4'>
