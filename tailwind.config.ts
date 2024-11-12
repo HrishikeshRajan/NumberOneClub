@@ -64,6 +64,9 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		borderColor :{
+			sunglow:'#FFCA2C',
+		},
 		  fontFamily: {
 			euclid: ['var(--font-euclid)'],
 		  },
@@ -76,6 +79,9 @@ export default {
 		  backgroundImage: {
 			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
 		  },
+		  boxShadow: {
+			'search-bar': '0px 0px 12.73px 0px #FFCA2C80'
+		  }
   	},
 
   },
