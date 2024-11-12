@@ -1,6 +1,7 @@
 "use client"
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { CreatorsNavMenu } from './CreatorsDropDown'
 
 enum NavLinkPath {
     CREATORS = '/creators',
@@ -8,20 +9,12 @@ enum NavLinkPath {
     PRICING = '/pricing',
     CALCULATOR = '/calculator'
   };
-
 export function NavLinks({ className }: { className: string }) {
   const pathname = usePathname()
   
   return (
     <div className={className}>
-      <Link 
-        href="/" 
-        className={`relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform ${
-          pathname === '/' ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100'
-        }`}
-      >
-        Creators
-      </Link>
+      <CreatorsNavMenu />
       <Link 
         href={NavLinkPath.BENEFITS} 
         className={`relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform ${
