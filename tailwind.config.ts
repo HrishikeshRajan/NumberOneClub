@@ -45,7 +45,7 @@ export default {
   			},
 			border: {
 				DEFAULT: 'hsl(var(--border))',
-				skobeloff: '#07636A'
+				skobeloff: '#07636A',
 			},
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -58,6 +58,8 @@ export default {
   			},
 			Skobeloff:'#07636A',
 			sliversand: "#C2C2C2",
+			darkslategray: '#006066',
+			darkgray: '#9A9A9A'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -80,7 +82,9 @@ export default {
 			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
 		  },
 		  boxShadow: {
-			'search-bar': '0px 0px 12.73px 0px #FFCA2C80'
+			'search-bar': '0px 0px 12.73px 0px #FFCA2C80',
+			 'category': '0px 0px 25px 0px #0000001A'
+
 		  }
   	},
 
