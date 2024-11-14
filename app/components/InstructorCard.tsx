@@ -12,8 +12,7 @@ export default function CardWithInstructor() {
         alt="Profile Picture"
          width={130}
          height={130}
-        objectFit="cover"
-        className="rounded-t-lg  -z-9 absolute top-0 left-0 right-0"
+        className="rounded-t-lg  -z-9 absolute top-0 left-0 right-0 object-cover"
         style={{
          position: 'absolute',
          top: '46px',

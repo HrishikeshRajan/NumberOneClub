@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Heading } from '../components/Heading'
 import SearchBox from '../components/SearchBox'
@@ -5,6 +6,7 @@ import CategoryCard from '../components/CategoryCard';
 import { ShowInCarousel } from '../components/Carousel';
 import { ExpertToggler } from '../components/ExpertToggler';
 import CardWithInstructor from '../components/InstructorCard';
+import ExpertTab from '../components/ExpertTab';
 
 async function page({searchParams}: {
     searchParams: Promise<{query:string}>
@@ -63,6 +65,10 @@ async function page({searchParams}: {
            itemClassName='pl-10'  
           />
 
+        </div>
+
+        <div className='overflow-hidden  w-full'>
+        <ExpertTab />
         </div>
     
         </section>
