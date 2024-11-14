@@ -2,9 +2,9 @@ import React from 'react'
 import { Heading } from '../components/Heading'
 import SearchBox from '../components/SearchBox'
 import CategoryCard from '../components/CategoryCard';
-import { CustomCarousel } from '../components/Carousel';
-import { CarouselSpacing } from '../components/GenericCarousel';
+import { ShowInCarousel } from '../components/Carousel';
 import { ExpertToggler } from '../components/ExpertToggler';
+import CardWithInstructor from '../components/InstructorCard';
 
 async function page({searchParams}: {
     searchParams: Promise<{query:string}>
@@ -29,22 +29,42 @@ async function page({searchParams}: {
         description='My accounts are a nightmare! Please help me find a local CA' 
         />
     ]
+
+    const instructors = [
+
+        <CardWithInstructor />,
+        <CardWithInstructor />,
+        <CardWithInstructor />,
+        <CardWithInstructor />
+
+    ]
     return (
         <section className="flex justify-center flex-col items-center w-full">
         <Heading title='What’s on your mind?' className=' yellow-green-gradient text-2xl md:text-4xl xl:text-6xl mt-20 font-extrabold font-euclid'  />
         <SearchBox query={query} />
         <div className='mt-5  '>
 
-                <CarouselSpacing 
-                items={cards}
-                autoplay={true}
-                />
+            <ShowInCarousel 
+            items={cards}
+            autoplay={true}
+            interval={5000}
+            itemClassName='pl-3'  
+            />
         </div>
 
         <div className='mt-5 w-full'>
-
-         <ExpertToggler />
+            <ExpertToggler />
         </div>
+
+        <div className='mt-5 py-5'>
+          <ShowInCarousel 
+           items={instructors}
+           autoplay={true}
+           itemClassName='pl-10'  
+          />
+
+        </div>
+    
         </section>
     )
 }
