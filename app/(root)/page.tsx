@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox'
 import CategoryCard from '../components/CategoryCard';
 import { CustomCarousel } from '../components/Carousel';
 import { CarouselSpacing } from '../components/GenericCarousel';
+import { ExpertToggler } from '../components/ExpertToggler';
 
 async function page({searchParams}: {
     searchParams: Promise<{query:string}>
@@ -32,13 +33,18 @@ async function page({searchParams}: {
         <section className="flex justify-center flex-col items-center w-full">
         <Heading title='What’s on your mind?' className=' yellow-green-gradient text-2xl md:text-4xl xl:text-6xl mt-20 font-extrabold font-euclid'  />
         <SearchBox query={query} />
-      <div className='mt-5  '>
+        <div className='mt-5  '>
 
-            <CarouselSpacing 
-             items={cards}
-             autoplay={true}
-            />
-      </div>
+                <CarouselSpacing 
+                items={cards}
+                autoplay={true}
+                />
+        </div>
+
+        <div className='mt-5 w-full'>
+
+         <ExpertToggler />
+        </div>
         </section>
     )
 }
