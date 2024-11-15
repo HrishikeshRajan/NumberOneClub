@@ -4,7 +4,6 @@ import { Heading } from '../components/Heading'
 import SearchBox from '../components/SearchBox'
 import CategoryCard from '../components/CategoryCard';
 import { ShowInCarousel } from '../components/Carousel';
-import { ExpertToggler } from '../components/ExpertToggler';
 import CardWithInstructor from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
@@ -64,15 +63,18 @@ async function page({searchParams}: {
 
       ];
     return (
-        <section className="flex justify-center flex-col items-center w-full">
-        <Heading title='What’s on your mind?' className=' yellow-green-gradient text-2xl md:text-4xl xl:text-6xl mt-20 font-extrabold font-euclid'  />
+        <section className="flex justify-center flex-col items-center overflow-x-hidden">
+        <Heading title='What’s on your mind?' 
+          className=' yellow-green-gradient text-3xl mt-10  md:text-4xl xl:text-6xl font-extrabold font-euclid'
+          />
         <SearchBox query={query} />
-        <div className='mt-5  '>
+        <div className='mt-5 bg-darkslategra overflow-hidden'>
             <ShowInCarousel 
             items={cards}
             autoplay={true}
-            interval={5000}
-            itemClassName='pl-3'  
+            interval={4000}
+            className=' max-w-md md:max-w-3xl lg:max-w-6xl'
+            itemClassName='pl-10  basis-2/3 '  
             />
         </div>
 

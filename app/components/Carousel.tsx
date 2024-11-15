@@ -32,7 +32,7 @@ export function ShowInCarousel({
     <Carousel 
     
     plugins={autoplay ? [Autoplay({ delay: interval, stopOnInteraction: false, stopOnMouseEnter:true })]:[]}
-    className={`w-full max-w-sm md:max-w-3xl lg:max-w-6xl ${className}`}>
+    className={`w-full max-w-md md:max-w-3xl lg:max-w-6xl ${className}`}>
       <CarouselContent className={`-ml-5 py-10 pl-10 md:p-10 md:pl-20 lg:pl-10 mt-1 ${contentClassName}`}>
         {
         items.map((item, index) => (
