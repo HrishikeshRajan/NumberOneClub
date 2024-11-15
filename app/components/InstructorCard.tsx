@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-type InstructorCardProps = {
+export type InstructorCardProps = {
   name: string;
   company: string;
   rating: number;

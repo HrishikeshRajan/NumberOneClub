@@ -4,10 +4,12 @@ import { Heading } from '../components/Heading'
 import SearchBox from '../components/SearchBox'
 import CategoryCard from '../components/CategoryCard';
 import { ShowInCarousel } from '../components/Carousel';
-import CardWithInstructor from '../components/InstructorCard';
+import CardWithInstructor, { InstructorCardProps } from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
 import instructors from '../seed/instructors';
+import { withLink } from '../components/decorators/WithLink';
+
 
 
 async function page({searchParams}: {
@@ -34,18 +36,20 @@ async function page({searchParams}: {
         />
     ]
 
+   const InstructorCardWithLink =  withLink<InstructorCardProps & { href: string }>(CardWithInstructor)
+   
     let instructorsList:any[] = []
 
     if(Array.isArray(instructors) && instructors.length > 0) {
         instructorsList = instructors.map((instructor) => (
-            <CardWithInstructor
+            <InstructorCardWithLink
             key={instructor.id}
             name={instructor.name}
             company={instructor.company}
             rating={instructor.rating}
             image={instructor.image}
             backgroundColor={instructor.backgroundColor}
-            />
+            href={`${instructor.id}`}            />
         ))
     }
 
