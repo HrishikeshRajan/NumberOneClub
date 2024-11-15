@@ -59,7 +59,8 @@ export default {
 			Skobeloff:'#07636A',
 			sliversand: "#C2C2C2",
 			darkslategray: '#006066',
-			darkgray: '#9A9A9A'
+			darkgray: '#9A9A9A',
+			dimgray: '#6D6D6D'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

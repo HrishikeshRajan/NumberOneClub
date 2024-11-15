@@ -7,6 +7,7 @@ import { ShowInCarousel } from '../components/Carousel';
 import { ExpertToggler } from '../components/ExpertToggler';
 import CardWithInstructor from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
+import Tab2Content from '../components/tab/Tab2Content';
 
 async function page({searchParams}: {
     searchParams: Promise<{query:string}>
@@ -40,12 +41,33 @@ async function page({searchParams}: {
         <CardWithInstructor />
 
     ]
+
+    const tabsData = [
+        {
+          id: "findExpert",
+          label: "Find Expert",
+          content: 
+          <div className='mt-5 py-5'>
+            <ShowInCarousel 
+             items={instructors}
+             autoplay={true}
+             itemClassName='pl-10'  
+            />
+  
+          </div>
+        },
+        {
+          id: "becomeExpert",
+          label: "Become Expert",
+          content: <Tab2Content />
+        },
+
+      ];
     return (
         <section className="flex justify-center flex-col items-center w-full">
         <Heading title='What’s on your mind?' className=' yellow-green-gradient text-2xl md:text-4xl xl:text-6xl mt-20 font-extrabold font-euclid'  />
         <SearchBox query={query} />
         <div className='mt-5  '>
-
             <ShowInCarousel 
             items={cards}
             autoplay={true}
@@ -54,22 +76,11 @@ async function page({searchParams}: {
             />
         </div>
 
-        <div className='mt-5 w-full'>
-            <ExpertToggler />
+        <div className=' overflow-hidden mt-5 w-full'>
+            <ExpertTab tabs={tabsData} />
         </div>
 
-        <div className='mt-5 py-5'>
-          <ShowInCarousel 
-           items={instructors}
-           autoplay={true}
-           itemClassName='pl-10'  
-          />
 
-        </div>
-
-        <div className='overflow-hidden  w-full'>
-        <ExpertTab />
-        </div>
     
         </section>
     )
