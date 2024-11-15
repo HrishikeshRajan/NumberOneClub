@@ -7,6 +7,8 @@ import { ShowInCarousel } from '../components/Carousel';
 import CardWithInstructor from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
+import instructors from '../seed/instructors';
+
 
 async function page({searchParams}: {
     searchParams: Promise<{query:string}>
@@ -32,14 +34,20 @@ async function page({searchParams}: {
         />
     ]
 
-    const instructors = [
+    let instructorsList:any[] = []
 
-        <CardWithInstructor />,
-        <CardWithInstructor />,
-        <CardWithInstructor />,
-        <CardWithInstructor />
-
-    ]
+    if(Array.isArray(instructors) && instructors.length > 0) {
+        instructorsList = instructors.map((instructor) => (
+            <CardWithInstructor
+            key={instructor.id}
+            name={instructor.name}
+            company={instructor.company}
+            rating={instructor.rating}
+            image={instructor.image}
+            backgroundColor={instructor.backgroundColor}
+            />
+        ))
+    }
 
     const tabsData = [
         {
@@ -48,9 +56,11 @@ async function page({searchParams}: {
           content: 
           <div className='mt-5 py-5'>
             <ShowInCarousel 
-             items={instructors}
+             items={instructorsList}
              autoplay={true}
-             itemClassName='pl-10'  
+             className=' max-w-md sm:max-w-6xl md:max-w-6xl lg:max-w-full -ml-1'
+             itemClassName='pl-5  basis-1/1  sm:basis-2/3 md:basis-1/3 lg:basis-1/5 xl:basis-1/4'  
+             contentClassName=''
             />
   
           </div>
@@ -68,13 +78,13 @@ async function page({searchParams}: {
           className=' yellow-green-gradient text-3xl sm:text-5xl mt-10  md:text-4xl xl:text-5xl font-extrabold font-euclid'
           />
         <SearchBox query={query} />
-        <div className='mt-5 xl:mt-10 bg-darkslategra overflow-hidden'>
+        <div className='mt-5 xl:mt-10 bg-darkslategra overflow-hidden flex justify-center'>
             <ShowInCarousel 
             items={cards}
             autoplay={true}
             interval={4000}
-            className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-7xl xl:max-w-full'
-            itemClassName='pl-10  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-1/5'  
+            className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full'
+            itemClassName='pl-5  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-1/4'  
             />
         </div>
 

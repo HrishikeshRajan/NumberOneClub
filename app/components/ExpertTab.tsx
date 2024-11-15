@@ -13,7 +13,7 @@ interface TabData {
     tabs: TabData[];
   }
 export default function ExpertTab({ tabs }:ExpertTabProps) {
-  const [activeTab, setActiveTab] = useState(tabs[0].id); // Set initial active tab
+  const [activeTab, setActiveTab] = useState(tabs[0].id);  
 
   return (
     <div className="flex flex-col items-center justify-center font-euclid">

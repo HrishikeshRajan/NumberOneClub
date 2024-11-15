@@ -83,14 +83,18 @@ export default {
 		  },
 		  backgroundImage: {
 			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
+			'green-gradient': 'linear-gradient(133.91deg, #00C294 3.7%, #043C40 78.93%)',
+			'yellow-gradient': 'linear-gradient(134.82deg, #FBC926 10.5%, #C27741 71.77%)',
+			'blue-gradient': 'linear-gradient(134.82deg, #E3B9F2 10.5%, #794C8E 71.77%)',
 		  },
 		  boxShadow: {
 			'search-bar': '0px 0px 12.73px 0px #FFCA2C80',
-			 'category': '0px 0px 25px 0px #0000001A'
+			 'category': '0px 0px 25px 0px #0000001A',
+			 'instructor-card-shadow': '0px 3.55px 17.74px 0px #0000001A'
 
 		  }
   	},
 
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp')],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
