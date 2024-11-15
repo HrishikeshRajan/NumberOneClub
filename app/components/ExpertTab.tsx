@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 interface TabData {
@@ -52,7 +52,22 @@ export default function ExpertTab({ tabs }:ExpertTabProps) {
           (tab) =>
             activeTab === tab.id && (
               <div key={tab.id} className="w-full flex justify-center">
-                 {tab.content}
+                <AnimatePresence mode="wait">
+                    {tabs.map((tab) =>
+                        activeTab === tab.id ? (
+                        <motion.div
+                            key={tab.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="w-full flex justify-center"
+                        >
+                            {tab.content}
+                        </motion.div>
+                        ) : null
+                    )}
+        </AnimatePresence>
               </div>
             )
         )}
