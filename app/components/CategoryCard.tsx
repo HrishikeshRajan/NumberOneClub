@@ -13,12 +13,12 @@ type CategoryCardProps = {
 }
 function CategoryCard({title,description}:CategoryCardProps) {
   return (
-     <Card className='w-auto h-44 shadow-category font-euclid rounded-3xl'>
+     <Card className='w-auto min-h-44 shadow-category font-euclid rounded-3xl'>
       <CardHeader>
-        <CardTitle className='text-darkslategray text-xl font-semibold'>{title}</CardTitle>
+        <CardTitle className='text-darkslategray text-xl font-semibold line-clamp-2'>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-      <CardDescription className='text-darkgray text-md font-normal -mt-5'>{description}</CardDescription>
+      <CardDescription className='text-darkgray text-md font-normal -mt-5 line-clamp-3'>{description}</CardDescription>
       </CardContent>
     </Card>
   )

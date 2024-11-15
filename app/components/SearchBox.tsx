@@ -7,8 +7,8 @@ import CustomButton from './theme/CustomButton';
 import EnableClickAnimation from './animation/EnableClickAnimation';
 async function SearchBox({query}:{query?:string}) {
   return (
-<Form action='/' scroll={false} className='mt-8 w-full focus:outline-none'>
-  <div className="flex items-center max-w-md px-2 mx-auto mt-4 md:max-w-2xl lg:max-w-3xl">
+<Form action='/' scroll={false} className='mt-8 lg:mt-10 w-full focus:outline-none'>
+  <div className="flex items-center max-w-md px-2 mx-auto mt-4 sm:max-w-2xl md:max-w-2xl lg:max-w-3xl">
     <div className="flex items-center bg-white border-2 gap-2 border-sunglow rounded-full  px-4 py-2 w-full focus:outline-none focus-visible:ring-2 shadow-search-bar">
       <Image src="lens.svg" alt='lens icons' width={20} height={20} className="pointer-events-none"/>
       <input

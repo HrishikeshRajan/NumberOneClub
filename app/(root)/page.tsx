@@ -65,25 +65,22 @@ async function page({searchParams}: {
     return (
         <section className="flex justify-center flex-col items-center overflow-x-hidden">
         <Heading title='What’s on your mind?' 
-          className=' yellow-green-gradient text-3xl mt-10  md:text-4xl xl:text-6xl font-extrabold font-euclid'
+          className=' yellow-green-gradient text-3xl sm:text-5xl mt-10  md:text-4xl xl:text-5xl font-extrabold font-euclid'
           />
         <SearchBox query={query} />
-        <div className='mt-5 bg-darkslategra overflow-hidden'>
+        <div className='mt-5 xl:mt-10 bg-darkslategra overflow-hidden'>
             <ShowInCarousel 
             items={cards}
             autoplay={true}
             interval={4000}
-            className=' max-w-md md:max-w-3xl lg:max-w-6xl'
-            itemClassName='pl-10  basis-2/3 '  
+            className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-7xl xl:max-w-full'
+            itemClassName='pl-10  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-1/5'  
             />
         </div>
 
         <div className=' overflow-hidden mt-5 w-full'>
             <ExpertTab tabs={tabsData} />
-        </div>
-
-
-    
+        </div>    
         </section>
     )
 }
