@@ -18,7 +18,7 @@ export default function ExpertTab({ tabs }:ExpertTabProps) {
   return (
     <div className="flex flex-col items-center justify-center font-euclid">
       {/* Tab Buttons */}
-      <div className="flex rounded-full overflow-hidden bg-yellow-400 max-w-xs lg:max-w-lg w-full px-2 py-2 mb-6 justify-center">
+      <div className="flex rounded-full overflow-hidden bg-sunglow max-w-xs lg:max-w-lg w-full px-2 py-2 mb-6 justify-center">
         {tabs.map((tab) => (
           <button
             key={tab.id}

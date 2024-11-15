@@ -12,7 +12,8 @@ export default {
   		colors: {
 			background: {
 				DEFAULT: 'hsl(var(--background))',
-				skobeloff: '#07636A' 
+				skobeloff: '#07636A',
+				sunglow:'#FFCA2C',
 			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -60,7 +61,8 @@ export default {
 			sliversand: "#C2C2C2",
 			darkslategray: '#006066',
 			darkgray: '#9A9A9A',
-			dimgray: '#6D6D6D'
+			dimgray: '#6D6D6D',
+			sunglow:'#FFCA2C',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
