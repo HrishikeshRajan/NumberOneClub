@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 
-function EnableTextEaseAnimation({children, key}:{children:React.ReactNode, key:string | number}) {
+function EnableTextEaseAnimation({children, refer}:{children:React.ReactNode, refer:string | number}) {
   return (
     <motion.span
-    key={key} 
+    key={refer} 
     initial={{ scale: .75 }}
     animate={{ scale: .9 }}
     exit={{ scale: 0.9}}

@@ -50,7 +50,7 @@ function VideoConference() {
               -
             </CustomButton>
           </EnableClickAnimation>
-          <EnableTextEaseAnimation key={duration}>
+          <EnableTextEaseAnimation refer={duration}>
           <span className="font-semibold text-sm text-Skobeloff w-14 p-0 m-0 lg:w-20 text-center">{duration} Mins</span>
         
           </EnableTextEaseAnimation>
