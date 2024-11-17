@@ -23,7 +23,7 @@ function VideoConference() {
     };
   
     return (
-      <div className="flex items-center justify-between bg-whitesmoke px-4 py-2 my-10 rounded-lg  w-full max-w-md md:max-w-lg">
+      <div className="flex items-center justify-between bg-whitesmoke px-4 py-2 my-10 rounded-lg  w-full">
         {/* Icon and Label */}
         <div className="flex items-center gap-1 lg:gap-3">
           <div className="text-gray-500">
