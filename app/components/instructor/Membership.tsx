@@ -3,6 +3,7 @@ import CustomButton from "../theme/CustomButton";
 import { Heading } from "../Heading";
 import VideoConference from "../VideoConference";
 import AskNoa from "../AskNoa";
+import EnableClickAnimation from "../animation/EnableClickAnimation";
 
 interface MentorshipDetailsProps {
   title: string;
@@ -46,13 +47,17 @@ const MentorshipDetails: React.FC<MentorshipDetailsProps> = ({
       <VideoConference />
        <AskNoa />
        <div className="flex justify-between items-center mt-10"> 
-         <CustomButton variant={'ghost'} className="p-5  text-Skobeloff hover:bg-Skobeloff hover:text-white text-sm font-semibold shadow-none  rounded-full border-Skobeloff border-2">
-            Go Back
+         <EnableClickAnimation>
+          <CustomButton variant={'ghost'} className="p-5  text-Skobeloff hover:bg-Skobeloff hover:text-white text-sm font-semibold shadow-none  rounded-full border-Skobeloff border-2">
+              Go Back
             </CustomButton>
+         </EnableClickAnimation>
 
+          <EnableClickAnimation>
             <CustomButton variant={'ghost'} className="p-5   bg-Skobeloff text-white text-sm font-semibold hover:bg-Skobeloff hover:text-white shadow-none  rounded-full border-Skobeloff border-2">
-            Book Now
-            </CustomButton>
+              Book Now
+              </CustomButton>
+          </EnableClickAnimation>
         </div>
     </div>
   );
