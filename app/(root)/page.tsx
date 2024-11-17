@@ -49,7 +49,7 @@ async function page({searchParams}: {
             rating={instructor.rating}
             image={instructor.image}
             backgroundColor={instructor.backgroundColor}
-            href={`${instructor.id}`}            />
+            href={`instructor/:${instructor.id}`}            />
         ))
     }
 
@@ -76,6 +76,7 @@ async function page({searchParams}: {
         },
 
       ];
+      
     return (
         <section className="flex justify-center flex-col items-center overflow-x-hidden">
         <Heading title='What’s on your mind?' 

@@ -63,6 +63,7 @@ export default {
 			darkgray: '#9A9A9A',
 			dimgray: '#6D6D6D',
 			sunglow:'#FFCA2C',
+			gray: '#797979'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
