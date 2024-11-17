@@ -23,13 +23,13 @@ const MentorshipDetails: React.FC<MentorshipDetailsProps> = ({
   price,
 }) => {
   return (
-    <div className="flex-1 max-w-full px-4 py-4 lg:max-w-6xl bg-white lg:p-6 rounded-2xl shadow font-euclid">
+    <div className="flex-1 max-w-full px-4 py-4 xl:max-w-full bg-white lg:p-6 rounded-2xl shadow font-euclid">
       <Heading  title={title} className=" text-lg lg:text-2xl font-semibold mb-4 text-Skobeloff" />
       <div className="flex gap-2 mt-2 w-full justify-start">
         {tags.map((tag) => (
           <CustomButton
             key={tag}
-            className="px-4 py-1 text-xs lg:text-sm font-semibold bg-gainsboro text-Skobeloff rounded-full hover:bg-gainsboro hover:text-Skobeloff"
+            className="px-4 py-1 xl:py-0  text-xs xl:text-sm lg:text-sm font-semibold bg-gainsboro text-Skobeloff rounded-full hover:bg-gainsboro hover:text-Skobeloff"
             variant={'ghost'}
           >
             {tag}

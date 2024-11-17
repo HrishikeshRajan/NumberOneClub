@@ -3,7 +3,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import CustomButton from './theme/CustomButton'
 import EnableClickAnimation from './animation/EnableClickAnimation';
-import { motion } from 'framer-motion';
 import EnableTextEaseAnimation from './animation/EnableTextEaseAnimation';
 
 function VideoConference() {

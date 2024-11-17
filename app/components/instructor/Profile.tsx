@@ -24,7 +24,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   additionalInfo,
 }) => {
   return (
-    <div className=" max-w-full flex flex-col items-center text-center xl:items-start xl:text-left font-euclid">
+    <div className=" max-w-full xl:max-w-sm flex flex-col items-center text-center xl:items-start xl:text-left font-euclid">
         <ProfileCard 
         imageUrl="/lady-2.svg"
         gradient="bg-green-gradient"
@@ -41,7 +41,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
               className="w-5 lg:w-12 m-0"
              />
         </h2>
-      <p className="text-darkslategray font-normal text-xs lg:text-2xl mt-1">{title}</p>
+      <p className="text-darkslategray font-normal text-xs lg:text-2xl mt-1 xl:mt-2">{title}</p>
       <div className="flex items-center gap-4 mt-5">
         <span className="flex  items-center gap-1 text-lg font-bold text-darkslategray"> 
              <Image 
@@ -78,7 +78,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
           </a>
         </div>
       </div>
-      <p className="mt-4 text-darkslategray font-semibold text-lg lg:text-2xl" >{aboutText}</p>
+      <p className="mt-4 xl:mt-10 text-darkslategray font-semibold text-lg lg:text-2xl" >{aboutText}</p>
       <p className="mt-2 text-gray-500 text-gray font-normal text-sm text-justify lg:text-lg">{additionalInfo}</p>
     </div>
   );

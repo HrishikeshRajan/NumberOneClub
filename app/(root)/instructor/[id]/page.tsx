@@ -5,7 +5,7 @@ import React from "react";
 
 const MentorshipCard: React.FC = () => {
   return (
-    <div className="max-w-5xl mx-auto p-6 rounded-2xl  flex flex-col xl:flex-row gap-8">
+    <div className="max-w-5xl mx-auto p-6 rounded-2xl  flex flex-col xl:flex-row gap-8 xl:gap-16">
       {/* Left Section */}
       <ProfileSection
         name="Deepa Varghese"
