@@ -2,27 +2,30 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import CustomButton from './theme/CustomButton'
+import EnableClickAnimation from './animation/EnableClickAnimation';
+import { motion } from 'framer-motion';
+import EnableTextEaseAnimation from './animation/EnableTextEaseAnimation';
 
 function VideoConference() {
-    const [duration, setDuration] = useState(30); // Default duration
-    const [price, setPrice] = useState(800); // Default price
+    const [duration, setDuration] = useState(30);
+    const [price, setPrice] = useState(800); 
   
     const handleIncrease = () => {
       setDuration((prev) => prev + 15);
-      setPrice((prev) => prev + 400); // Increase price by ₹400 for every 15 mins
+      setPrice((prev) => prev + 400); 
     };
   
     const handleDecrease = () => {
       if (duration > 15) {
         setDuration((prev) => prev - 15);
-        setPrice((prev) => prev - 400); // Decrease price by ₹400 for every 15 mins
+        setPrice((prev) => prev - 400); 
       }
     };
   
     return (
       <div className="flex items-center justify-between bg-whitesmoke px-4 py-2 my-10 rounded-lg  w-full max-w-md md:max-w-lg">
         {/* Icon and Label */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 lg:gap-3">
           <div className="text-gray-500">
           <Image 
               src="/calander.svg"
@@ -32,37 +35,47 @@ function VideoConference() {
               className="w-5"
              />
           </div>
-          <span className="font-medium text-gray">Video Conference</span>
+          <span className=" text-xs hidden lg:flex font-medium text-gray">Video Conference</span>
         </div>
   
-        {/* Duration Selector */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleDecrease}
-            className="w-8 h-8 rounded-full bg-transparent text-Skobeloff border-2 border-Skobeloff flex items-center justify-center hover:bg-gray-300 transition p-0"
-            aria-label="Decrease duration"
-          >
-            -
-          </button>
-          <span className="font-semibold text-Skobeloff w-20 text-center">{duration} Mins</span>
+       <div className='flex gap-2'>
+          {/* Duration Selector */}
+          <div className="flex items-center justify-center gap-2">
+          <EnableClickAnimation>
+            <CustomButton
+              onClick={handleDecrease}
+              className="w-6 h-6 text-center lg:w-8 lg:h-8 rounded-full bg-transparent text-Skobeloff border-2 border-Skobeloff flex items-center justify-center hover:bg-gray-300 transition p-0 leading-none"
+              aria-label="Decrease duration"
+            >
+              -
+            </CustomButton>
+          </EnableClickAnimation>
+          <EnableTextEaseAnimation key={duration}>
+          <span className="font-semibold text-sm text-Skobeloff w-14 p-0 m-0 lg:w-20 text-center">{duration} Mins</span>
+        
+          </EnableTextEaseAnimation>
+    
+          <EnableClickAnimation>
           <CustomButton
-            onClick={handleIncrease}
-            className="w-8 h-8 rounded-full bg-transparent text-Skobeloff border-2 border-Skobeloff flex items-center justify-center hover:bg-gray-300 transition p-0"
-            aria-label="Increase duration"
-          >
-            +
-          </CustomButton>
+                onClick={handleIncrease}
+                className="w-6 h-6 text-center lg:w-8  lg:h-8 rounded-full bg-transparent text-Skobeloff border-2 border-Skobeloff flex items-center justify-center hover:bg-gray-300 transition p-0 leading-none"
+                aria-label="Increase duration"
+              >
+                +
+              </CustomButton>
+          </EnableClickAnimation>
         </div>
   
         {/* Price */}
-        <div>
+      
           <button
-            className="px-6 py-1 rounded-full border-2 border-Skobeloff text-Skobeloff hover:bg-Skobeloff hover:text-white  transition font-semibold"
+            className=" text-sm px-6 py-1 rounded-full border-2 border-Skobeloff text-Skobeloff hover:bg-Skobeloff hover:text-white  transition font-semibold"
             aria-label="Price button"
           >
             ₹800
           </button>
-        </div>
+        
+       </div>
       </div>
     );
 }

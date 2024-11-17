@@ -22,22 +22,22 @@ const MentorshipDetails: React.FC<MentorshipDetailsProps> = ({
   price,
 }) => {
   return (
-    <div className="flex-1 max-w-6xl bg-white p-6 rounded-2xl shadow font-euclid">
-      <Heading  title={title} className="text-2xl font-semibold mb-4 text-Skobeloff" />
-      <div className="flex gap-2 mt-2">
+    <div className="flex-1 max-w-full px-4 py-4 lg:max-w-6xl bg-white lg:p-6 rounded-2xl shadow font-euclid">
+      <Heading  title={title} className=" text-lg lg:text-2xl font-semibold mb-4 text-Skobeloff" />
+      <div className="flex gap-2 mt-2 w-full justify-start">
         {tags.map((tag) => (
           <CustomButton
             key={tag}
-            className="px-4 py-1 text-sm font-semibold bg-gainsboro text-Skobeloff rounded-full hover:bg-gainsboro hover:text-Skobeloff"
+            className="px-4 py-1 text-xs lg:text-sm font-semibold bg-gainsboro text-Skobeloff rounded-full hover:bg-gainsboro hover:text-Skobeloff"
             variant={'ghost'}
           >
             {tag}
           </CustomButton>
         ))}
       </div>
-      <p className="mt-4 font-normal text-gray">{description}</p>
-      <h4 className="mt-6 font-semibold text-Skobeloff">What to expect?</h4>
-      <ul className="list-disc list-inside marker:text-sunglow mt-2 text-gray">
+      <p className="mt-4 font-normal text-gray text-sm text-justify">{description}</p>
+      <h4 className="mt-6 text-md font-semibold text-Skobeloff">What to expect?</h4>
+      <ul className="list-disc text-sm list-inside marker:text-sunglow mt-2 text-gray">
         {expectations.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
