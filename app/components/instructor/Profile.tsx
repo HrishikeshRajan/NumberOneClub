@@ -24,13 +24,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   additionalInfo,
 }) => {
   return (
-    <div className="flex flex-col items-center text-center xl:items-start xl:text-left font-euclid">
-      {/* <Image
-        src="/demo-image.svg"
-        alt={name}
-        width={200}
-        height={200}
-        className="w-24 rounded-full mb-4" */}
+    <div className=" max-w-sm flex flex-col items-center text-center xl:items-start xl:text-left font-euclid">
         <ProfileCard 
         imageUrl="/lady-2.svg"
         gradient="bg-green-gradient"

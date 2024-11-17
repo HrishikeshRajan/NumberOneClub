@@ -14,6 +14,10 @@ export default {
 				DEFAULT: 'hsl(var(--background))',
 				skobeloff: '#07636A',
 				sunglow:'#FFCA2C',
+				gainsboro: '#D0E4E5',
+				whitesmoke: '#EFEFF0',
+				cornsilk:'#FFF3CF80',
+				palegoldenrod: '#FFE8A1'
 			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -63,7 +67,9 @@ export default {
 			darkgray: '#9A9A9A',
 			dimgray: '#6D6D6D',
 			sunglow:'#FFCA2C',
-			gray: '#797979'
+			gray: '#797979',
+			gainsboro: '#D0E4E5',
+			whitesmoke: '#EFEFF0'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
