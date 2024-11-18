@@ -12,7 +12,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ children, customStyle, ...p
     <Button
       {...props}
       className={cn(
-        "px-4 py-2 rounded-lg text-base font-semibold transition-all duration-300",
+        "px-4 py-2 rounded-lg text-base font-semibold transition-all duration-300 select-none",
         customStyle,
         props.className 
       )}

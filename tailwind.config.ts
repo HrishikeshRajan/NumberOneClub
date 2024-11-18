@@ -97,7 +97,8 @@ export default {
 		  boxShadow: {
 			'search-bar': '0px 0px 12.73px 0px #FFCA2C80',
 			 'category': '0px 0px 25px 0px #0000001A',
-			 'instructor-card-shadow': '0px 3.55px 17.74px 0px #0000001A'
+			 'instructor-card-shadow': '0px 3.55px 17.74px 0px #0000001A',
+			 'booking-card-shadow' : '0px 0px 21.99px 0px #0000001A'
 
 		  }
   	},
