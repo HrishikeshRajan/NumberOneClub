@@ -67,12 +67,12 @@ function VideoConference() {
   
         {/* Price */}
       
-          <button
-            className=" text-sm px-6 py-1 rounded-full border-2 border-Skobeloff text-Skobeloff hover:bg-Skobeloff hover:text-white  transition font-semibold"
+          <CustomButton
+            className=" text-sm px-6 py-1 rounded-full border-2 border-Skobeloff bg-Skobeloff text-white hover:bg-Skobeloff hover:text-white  transition font-semibold"
             aria-label="Price button"
           >
             ₹800
-          </button>
+          </CustomButton>
         
        </div>
       </div>
