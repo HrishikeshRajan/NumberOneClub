@@ -58,12 +58,13 @@ async function page({searchParams}: {
           id: "findExpert",
           label: "Find Expert",
           content: 
-          <div className='mt-5 py-5'>
+          <div className='mt-5 py-5 w-full'>
             <ShowInCarousel 
              items={instructorsList}
              autoplay={true}
-             className=' max-w-md sm:max-w-6xl md:max-w-6xl lg:max-w-full -ml-1'
-             itemClassName='pl-5  basis-1/1  sm:basis-2/3 md:basis-1/3 lg:basis-1/5 xl:basis-1/4'  
+             interval={5000}
+             className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w- xl:max-w-full'
+             itemClassName='pl-5  basis-3/4  sm:basis-2/3 md:basis-2/5 lg:p-1 lg:basis-2/6 xl:basis-1/5'  
              contentClassName=''
             />
   
@@ -87,9 +88,9 @@ async function page({searchParams}: {
             <ShowInCarousel 
             items={cards}
             autoplay={true}
-            interval={4000}
+            interval={5000}
             className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full'
-            itemClassName='pl-5  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-1/4'  
+            itemClassName='pl-5  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-2/6 xl:basis-1/4'  
             />
         </div>
 
