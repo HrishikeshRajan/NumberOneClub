@@ -11,6 +11,7 @@ import instructors from '../seed/instructors';
 import { withLink } from '../components/decorators/WithLink';
 import CustomButton from '../components/theme/CustomButton';
 import EnableClickAnimation from '../components/animation/EnableClickAnimation';
+import EnableLink from '../components/decorators/EnableLink';
 
 
 
@@ -71,11 +72,13 @@ async function page({searchParams}: {
             />
            <div className='w-full flex justify-center items-center'>
            <EnableClickAnimation>
-                <CustomButton
-                customStyle='bg-transparent border-2 border-darkslategray  text-darkslategray rounded-3xl p-6  hover:bg-darkslategray hover:text-white'
-              >
-                View More
-                </CustomButton>
+               <EnableLink href='/instructor'>
+                  <CustomButton
+                    customStyle='bg-transparent border-2 border-darkslategray  text-darkslategray rounded-3xl p-6  hover:bg-darkslategray hover:text-white'
+                  >
+                    View More
+                    </CustomButton>
+               </EnableLink>
             </EnableClickAnimation>
            </div>
   
