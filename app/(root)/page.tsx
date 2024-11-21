@@ -9,6 +9,8 @@ import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
 import instructors from '../seed/instructors';
 import { withLink } from '../components/decorators/WithLink';
+import CustomButton from '../components/theme/CustomButton';
+import EnableClickAnimation from '../components/animation/EnableClickAnimation';
 
 
 
@@ -67,6 +69,15 @@ async function page({searchParams}: {
              itemClassName='pl-5  basis-3/4  sm:basis-2/3 md:basis-2/5 lg:p-1 lg:basis-2/6 xl:basis-1/5'  
              contentClassName=''
             />
+           <div className='w-full flex justify-center items-center'>
+           <EnableClickAnimation>
+                <CustomButton
+                customStyle='bg-transparent border-2 border-darkslategray  text-darkslategray rounded-3xl p-6  hover:bg-darkslategray hover:text-white'
+              >
+                View More
+                </CustomButton>
+            </EnableClickAnimation>
+           </div>
   
           </div>
         },
