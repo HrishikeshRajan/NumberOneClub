@@ -11,7 +11,8 @@ import {
 interface CustomCarouselProps {
     items: React.ReactNode[]
     autoplay?: boolean
-    interval?: number
+    interval?: number,
+    loop?: boolean,
     showControls?: boolean
     showDots?: boolean
     className?: string
@@ -24,7 +25,7 @@ export function ShowInCarousel({
     autoplay = true,
     interval = 3000,
     className,
-
+    loop = true,
     contentClassName,
     itemClassName
   }: CustomCarouselProps) {
@@ -33,7 +34,7 @@ export function ShowInCarousel({
      opts={{
       containScroll: false,
       align:'start',
-      loop: true
+      loop: loop
      }}
     plugins={autoplay ? [Autoplay({ delay: interval, stopOnInteraction: false, stopOnMouseEnter:true })]:[]}
     className={`w-full max-w-md md:max-w-3xl lg:max-w-6xl ${className}`}>
