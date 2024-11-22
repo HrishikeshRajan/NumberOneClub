@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import CustomButton from "../theme/CustomButton";
 import { ShowInCarousel } from "../Carousel";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type CategorySeed = {
   id: number;
@@ -10,10 +11,25 @@ type CategorySeed = {
 };
 
 function InstructorSortTab({ seed }: { seed: Array<CategorySeed> }) {
+
+  const searchParams = useSearchParams()
+
+  const pathname = usePathname()
+   const  {replace} = useRouter()
+
+ 
   const [activeTab, setActiveTab] = useState(1);
 
-    const handleTabClick = (tab: number) => {
+    const handleTabClick = (tab: number, term:string) => {
       setActiveTab(tab);
+      const params = new URLSearchParams(searchParams);
+
+      if(term){
+        params.set('tag', term)
+      }else{
+        params.delete('tag')
+      }
+      replace(`${pathname}?${params.toString()}`);
     };
 
     if(! (Array.isArray(seed) &&
@@ -25,7 +41,7 @@ function InstructorSortTab({ seed }: { seed: Array<CategorySeed> }) {
       <div key={index} className="flex items-center gap-2 relative ">
         <CustomButton
           variant={"ghost"}
-          onClick={() => handleTabClick(item.id)}
+          onClick={() => handleTabClick(item.id, item.name)}
           className={`p-5 text-Skobeloff  relative hover:bg-sunglow hover:border-sunglow hover:text-Skobeloff text-sm font-semibold shadow-none rounded-full border-Skobeloff border-2 ${
             activeTab === item.id
               ? "bg-background-sunglow text-Skobeloff border-sunglow"
@@ -54,12 +70,12 @@ function InstructorSortTab({ seed }: { seed: Array<CategorySeed> }) {
 
 
   return (
-    <div className="mt-1 justify-center gap-10 w-full flex items-center relative">
+    <div className="mt-1 justify-center gap-10 w-full flex items-center relative ">
         <ShowInCarousel 
             items={tabs}
             autoplay={false}
             loop={false}
-            className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full m-auto '
+            className='max-w-ful sm:max-w-full md:max-w-full lg:max-w-full '
             itemClassName=' pl-4  basis-auto md:pl-5 md:basis-auto  lg:pl-5 lg:basis-auto  xl:pl-10  xl:basis-auto'  
             />
     </div>

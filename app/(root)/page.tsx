@@ -72,7 +72,7 @@ async function page({searchParams}: {
             />
            <div className='w-full flex justify-center items-center'>
            <EnableClickAnimation>
-               <EnableLink href='/instructor'>
+               <EnableLink href='/instructor?tag=all'>
                   <CustomButton
                     customStyle='bg-transparent border-2 border-darkslategray  text-darkslategray rounded-3xl p-6  hover:bg-darkslategray hover:text-white'
                   >

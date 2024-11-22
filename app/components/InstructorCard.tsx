@@ -9,7 +9,7 @@ export type InstructorCardProps = {
 };
 export default function CardWithInstructor({name,company,rating,image,backgroundColor}:InstructorCardProps) {
   return (
-    <div className="flex flex-col h-80  items-center mx-auto rounded-2xl max-w-[228.91px]">
+    <div className="flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]">
       {/* Image */}
       <div className={`w-full h-28   relative  ${backgroundColor || 'bg-green-gradient'} rounded-t-2xl mt-10 shadow-lg `}>
         <Image
