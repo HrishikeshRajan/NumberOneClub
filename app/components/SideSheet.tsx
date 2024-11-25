@@ -1,13 +1,15 @@
-
+"use client"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from 'next/image'
+import Link from "next/link"
+import { NavLinksValues } from "../seed/navLinks"
+import { CreatorsNavMenu } from "./CreatorsDropDown"
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 function SideSheet() {
   return (
@@ -22,15 +24,21 @@ function SideSheet() {
         priority 
       />
     </SheetTrigger>
-      
+
       <SheetContent side={'top'} className="focus:outline-none">
-        <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your account
-            and remove your data from our servers.
-          </SheetDescription>
-        </SheetHeader>
+          
+      <VisuallyHidden.Root>
+        <SheetTitle>Sidebar</SheetTitle>
+      </VisuallyHidden.Root>
+
+     
+         {NavLinksValues.map((link) => (
+          <Link href={link.path} key={link.path} className='flex items-center gap-2 p-2  transition-colors text-lg font-semibold text-Skobeloff'>
+
+            <p className='text-sm capitalize'>{link.label}</p>
+          </Link>
+        ))}
+         <CreatorsNavMenu />
       </SheetContent>
     </Sheet>
   )

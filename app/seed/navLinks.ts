@@ -7,12 +7,7 @@ enum NavLinkPath {
 
 
 export const NavLinksValues = [
-    {
-        id:1,
-        path: NavLinkPath.CREATORS,
-        label: 'Creators',
-        className: 'relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform',
-    },
+
     {
         id:2,
         path: NavLinkPath.BENEFITS,

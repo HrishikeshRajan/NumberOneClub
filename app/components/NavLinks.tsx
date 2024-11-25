@@ -13,7 +13,7 @@ export function NavLinks({ className }: { className: string }) {
 
       {NavLinksValues.map((link) => (
         <Link
-          key={link.id}
+          key={link.path}
           href={link.path}
           className={`relative transition-colors text-lg font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform ${
             pathname === link.path
