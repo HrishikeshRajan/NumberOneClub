@@ -17,11 +17,11 @@ export function CreatorsNavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="w-fit">
           <NavigationMenuTrigger 
             className={`relative pl-2 text-sm md:text-lg text-Skobeloff font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform ${
               pathname === '/creators' ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100 hover:text-Skobeloff active:text-Skobeloff'
-            } flex items-center gap-3 [&>svg]:w-10 [&>svg]:h-5 md:[&>svg]:w-5 md:[&>svg]:h-10 [&>svg]:text-sliversand [&>svg]:ml-1 data-[state=open]:text-Skobeloff data-[state=closed]:text-Skobeloff bg-transparent visited:text-Skobeloff`}
+            } flex items-center gap-0 [&>svg]:w-10 [&>svg]:h-5 md:[&>svg]:w-5 md:[&>svg]:h-10 [&>svg]:text-sliversand [&>svg]:ml-1 data-[state=open]:text-Skobeloff data-[state=closed]:text-Skobeloff bg-transparent visited:text-Skobeloff`}
           >
             Creators
           </NavigationMenuTrigger>

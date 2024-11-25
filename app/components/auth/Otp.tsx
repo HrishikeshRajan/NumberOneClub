@@ -8,6 +8,8 @@ import { Heading } from "../Heading";
 import { Button } from "@/components/ui/button";
 import CustomButton from "../theme/CustomButton";
 import EnableClickAnimation from "../animation/EnableClickAnimation";
+import { CustomDialog } from "../Modal";
+import { DialogClose } from "@/components/ui/dialog";
 
 type InputOTPFieldsProps = {
   className?: string;
@@ -19,7 +21,7 @@ export function InputOTPFields({
   PhoneNumber,
 }: InputOTPFieldsProps) {
   return (
-    <Card className="w-full max-w-md md:max-w-lg xl:w-1/3 h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
+    <Card className="w-full h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
       <Heading
         title="Sign in"
         className="text-darkslategray text-3xl md:text-3xl xl:text-4xl px-1 py-7 font-semibold text-left"
@@ -42,12 +44,12 @@ export function InputOTPFields({
 
         {/* OTP Input */}
         <InputOTP maxLength={6}>
-          <InputOTPGroup className="gap-3 md:gap-4 xl:gap-6 py-3 flex items-center justify-center">
+          <InputOTPGroup className="gap-2 md:gap-1 xl:gap-1 py-3 flex items-center justify-center">
             {[...Array(6)].map((_, index) => (
               <InputOTPSlot
                 key={index}
                 index={index}
-                className="border-mediumseagreen text-mediumseagreen text-xl border-2 rounded-lg w-12 h-12 md:w-14 md:h-14"
+                className="border-mediumseagreen text-mediumseagreen text-xl xl:text-3xl border-2 rounded-lg p-5 md:p-8 xl:p-7 "
                 style={{ borderRadius: "10px",  }}
               />
             ))}
@@ -71,6 +73,8 @@ export function InputOTPFields({
           </span>
         </p>
       </div>
+ 
     </Card>
   );
 }
+    

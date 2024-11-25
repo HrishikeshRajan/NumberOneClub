@@ -10,6 +10,8 @@ import Link from "next/link"
 import { NavLinksValues } from "../seed/navLinks"
 import { CreatorsNavMenu } from "./CreatorsDropDown"
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import { CustomDialog } from "./Modal"
+import { InputOTPFields } from "./auth/Otp"
 
 function SideSheet() {
   return (
@@ -32,6 +34,18 @@ function SideSheet() {
       </VisuallyHidden.Root>
 
      
+      <CustomDialog
+        triggerOn={
+          <Link href='#' className='flex items-center gap-2 p-2  transition-colors text-lg font-semibold text-Skobeloff'>
+          <p className='text-sm capitalize'>Login</p>
+        </Link>
+        }
+        triggerText="login"
+        triggerVariant="ghost"
+        dialogTitle=""
+        dialogDescription=""
+        content={<InputOTPFields PhoneNumber="+2348123456789" />}
+      />
          {NavLinksValues.map((link) => (
           <Link href={link.path} key={link.path} className='flex items-center gap-2 p-2  transition-colors text-lg font-semibold text-Skobeloff'>
 
