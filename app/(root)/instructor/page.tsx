@@ -27,7 +27,7 @@ async function Page(props: InstuctorListProps) {
   const currentPage = Number(searchParams?.page) || 1;
 
 
-  const  shimmers = useDuplicateComponents({duplicate:10, Component:InstructorSkeleton })
+  const  shimmers = useDuplicateComponents({duplicate:10, Component:InstructorSkeleton, className :"w-auto"})
 
   return (
     <div className='overflow-hidden'>
@@ -38,24 +38,13 @@ async function Page(props: InstuctorListProps) {
    
       <Suspense key={query + currentPage + tag} 
           fallback={
-            <>
-            <div className='xl:hidden'> 
-              <ShowInCarousel 
-             items={shimmers}
-             autoplay={false}
-             interval={5000}
-             loop={false}
-             className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w- xl:max-w-full'
-             itemClassName='pl-5  basis-auto  sm:basis-auto md:basis-auto lg:p-5 lg:basis-auto xl:p-5 xl:basis-auto'  
-             contentClassName='-ml-0 lg:ml-5'
-            />
+           <div className='xl:p-20'>
+              <div className=' mt-5 xl:-mt-5 grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+               { Array.from({ length: 10 }).map((_, index) => <div className='p-2 mt-0'><InstructorSkeleton className='w-auto' key={index} /></div>) }
             </div>
-            <div className=' mt-5 xl:mt-14  gap-10 xl:flex justify-center basis-auto hidden flex-wrap'>
-              {shimmers}
-
-            </div>
-            </>
+           </div>
           } >
+            
         <InstructorList query={query} page={currentPage} />       
       </Suspense>
     </div>

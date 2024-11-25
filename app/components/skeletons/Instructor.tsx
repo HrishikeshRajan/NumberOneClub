@@ -1,10 +1,11 @@
 
 import Image from 'next/image';
 import { Skeleton } from "@/components/ui/skeleton"
+import { twMerge } from 'tailwind-merge';
 
-export default function InstructorSkeleton() {
+export default function InstructorSkeleton({className}: {className?:string}) {
   return (
-    <div className="flex flex-col h-80  items-center rounded-2xl w-[228.91px] max-w-[228.91px]">
+    <div className={twMerge('flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]', className)}>
       {/* Image */}
       <Skeleton className={`w-full h-28   relative  rounded-t-2xl mt-10 shadow-lg `}>
         <Image
