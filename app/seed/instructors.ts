@@ -12,7 +12,7 @@ export default  [
     {
         id: 2,
         name: 'Sandeep Mishra',
-        company: 'Technology Consultant',
+        company: 'Technology Consultant Of India',  
         rating: 4.9,
         image: '/tech-man.png',
         backgroundColor: 'bg-yellow-gradient',

@@ -1,16 +1,15 @@
-
+import React, { ComponentProps } from "react";
 import Link from "next/link";
-import React from "react";
 
-interface CustomLinkProps  {
-  href: string; 
-  children: React.ReactNode 
+interface CustomLinkProps extends ComponentProps<typeof Link> {
+  href: string;
+  children: React.ReactNode;
 }
 
-const EnableLink: React.FC<CustomLinkProps> = ({ children, href,  ...props }) => {
+const EnableLink: React.FC<CustomLinkProps> = ({ children, href, ...props }) => {
   return (
     <Link href={href} {...props} passHref>
-        {children}
+      {children}
     </Link>
   );
 };

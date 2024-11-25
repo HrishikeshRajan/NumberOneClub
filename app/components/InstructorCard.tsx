@@ -1,15 +1,17 @@
 
 import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
 export type InstructorCardProps = {
   name: string;
   company: string;
   rating: number;
   image: string;
   backgroundColor: string;
+  className?:string;
 };
-export default function CardWithInstructor({name,company,rating,image,backgroundColor}:InstructorCardProps) {
+export default function CardWithInstructor({name,company,rating,image,backgroundColor, className}:InstructorCardProps) {
   return (
-    <div className="flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]">
+    <div className={twMerge('flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]', className)}>
       {/* Image */}
       <div className={`w-full h-28   relative  ${backgroundColor || 'bg-green-gradient'} rounded-t-2xl mt-10 shadow-lg `}>
         <Image
@@ -31,12 +33,12 @@ export default function CardWithInstructor({name,company,rating,image,background
       {/* Info */}
       <div className="p-4 z-0 bg-white w-full text-center rounded-b-2xl shadow-instructor-card-shadow ">
         <div className='flex items-center gap-2 w-full'>
-        <h3 className="text-lg font-bold text-left text-darkslategray line-clamp-1 w-full">{name}</h3>
+        <h3 className=" text-md md:text-lg font-bold text-left text-darkslategray line-clamp-1 w-full">{name}</h3>
         <span className="text-xs">
             <Image src="/company-logo.svg" width={16} height={16} alt="CA Icon" />
           </span>
         </div>
-        <p className="text-sm font-normal text-darkslategray flex items-left justify-start gap-1 line-clamp-2">
+        <p className=" text-xs md:text-sm font-normal text-darkslategray text-left gap-1 line-clamp-1 w-full">
           {company}
         </p>
 

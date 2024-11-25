@@ -30,7 +30,7 @@ async function Page(props: InstuctorListProps) {
   const  shimmers = useDuplicateComponents({duplicate:10, Component:InstructorSkeleton })
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <div className='mt-28'>
       <SearchBox />
       </div>
