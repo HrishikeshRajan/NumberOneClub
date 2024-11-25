@@ -17,7 +17,8 @@ export default {
 				gainsboro: '#D0E4E5',
 				whitesmoke: '#EFEFF0',
 				cornsilk:'#FFF3CF80',
-				palegoldenrod: '#FFE8A1'
+				palegoldenrod: '#FFE8A1',
+				mediumseagreen: '#00C294'
 			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -51,6 +52,7 @@ export default {
 			border: {
 				DEFAULT: 'hsl(var(--border))',
 				skobeloff: '#07636A',
+				mediumseagreen: '#00C294'
 			},
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -69,12 +71,13 @@ export default {
 			sunglow:'#FFCA2C',
 			gray: '#797979',
 			gainsboro: '#D0E4E5',
-			whitesmoke: '#EFEFF0'
+			whitesmoke: '#EFEFF0',
+			mediumseagreen: '#00C294'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
   		},
 		borderColor :{
 			sunglow:'#FFCA2C',
