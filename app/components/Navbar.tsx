@@ -16,9 +16,9 @@ function Navbar() {
                         <Image
                             src="/logo.svg"
                             alt="Logo"
-                            width={520}
-                            height={520}
-                            className=' w-20 h-20 xl:w-auto transition-all duration-300'
+                            width={500}
+                            height={500}
+                            className=' w-16 h-16 xl:w-auto transition-all duration-300'
                             priority />
                     </Link>
                     <div className={`hidden lg:flex items-center space-x-6 font-euclid font-bold`}>

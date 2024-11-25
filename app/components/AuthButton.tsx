@@ -13,23 +13,23 @@ export default function AuthButtons() {
      <EnableClickAnimation>
         <CustomButton
               variant={'ghost'}
-              customStyle={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
+              customStyle={`border-2 text-lg font-semibold rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
               ${activeButton === 'signup' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'} hover:text-white`} 
               asChild
               onClick={() => setActiveButton('signup')}
           >
-          <Link href="#">Sign Up</Link>
+          <Link href="#" className='text-lg font-semibold'>Sign Up</Link>
           </CustomButton>
      </EnableClickAnimation>
      <EnableClickAnimation>
         <CustomButton
               variant={'ghost'}
-              customStyle={`border-2 rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
+              customStyle={`border-2 text-lg font-semibold rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
               ${activeButton === 'login' ? 'bg-Skobeloff text-white' : 'hover:bg-Skobeloff hover:text-white'} hover:text-white`} 
               asChild
               onClick={() => setActiveButton('login')}
           >
-          <Link href="#">Login</Link>
+          <Link href="#" className='text-lg font-semibold'>Login</Link>
           </CustomButton>
      </EnableClickAnimation>
 
