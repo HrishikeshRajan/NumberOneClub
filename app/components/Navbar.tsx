@@ -4,7 +4,8 @@ import React from 'react'
 import Image from 'next/image'
 import { NavLinks } from './NavLinks'
 import AuthButtons from './AuthButton'
-import SideSheet from './SideSheet'
+import SideSheet from './ui/modals/SideSheet'
+
 function Navbar() {
     return (
         <header className='w-full  text-white px-4 py-4'>

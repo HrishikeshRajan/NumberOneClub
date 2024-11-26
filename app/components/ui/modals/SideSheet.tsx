@@ -7,11 +7,11 @@ import {
 } from "@/components/ui/sheet"
 import Image from 'next/image'
 import Link from "next/link"
-import { NavLinksValues } from "../seed/navLinks"
-import { CreatorsNavMenu } from "./CreatorsDropDown"
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { CustomDialog } from "./ui/modals/Modal"
-import { InputOTPFields } from "./auth/Otp"
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
+import { NavLinksValues } from "@/app/seed/navLinks"
+import { InputOTPFields } from "../../auth/Otp"
+import { CustomDialog } from "./Modal"
+import { CreatorsNavMenu } from "../../CreatorsDropDown"
 
 function SideSheet() {
   return (
