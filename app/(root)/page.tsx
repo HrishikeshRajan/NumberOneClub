@@ -9,7 +9,7 @@ import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
 import instructors from '../seed/instructors';
 import { withLink } from '../components/ui/decorators/WithLink';
-import CustomButton from '../components/theme/CustomButton';
+import CustomButton from '../components/ui/theme/CustomButton';
 import EnableClickAnimation from '../components/ui/animation/EnableClickAnimation';
 import EnableLink from '../components/ui/decorators/EnableLink';
 

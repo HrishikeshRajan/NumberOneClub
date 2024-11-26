@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-import CustomButton from './theme/CustomButton'
+import CustomButton from './ui/theme/CustomButton'
 import EnableClickAnimation from './ui/animation/EnableClickAnimation';
 import EnableTextEaseAnimation from './ui/animation/EnableTextEaseAnimation';
 

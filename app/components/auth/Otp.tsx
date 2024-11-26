@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
     InputOTPSlot,
     } from "@/components/ui/input-otp";
     import { Heading } from "../Heading";
-    import CustomButton from "../theme/CustomButton";
+    import CustomButton from "../ui/theme/CustomButton";
     import EnableClickAnimation from "../ui/animation/EnableClickAnimation";
     import Link from "next/link";
     import { useState } from "react";

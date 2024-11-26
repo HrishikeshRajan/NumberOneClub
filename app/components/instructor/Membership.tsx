@@ -1,5 +1,5 @@
 import React from "react";
-import CustomButton from "../theme/CustomButton";
+import CustomButton from "../ui/theme/CustomButton";
 import { Heading } from "../Heading";
 import VideoConference from "../VideoConference";
 import AskNoa from "../AskNoa";

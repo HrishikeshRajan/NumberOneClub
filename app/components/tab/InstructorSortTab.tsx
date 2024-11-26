@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import CustomButton from "../theme/CustomButton";
+import CustomButton from "../ui/theme/CustomButton";
 import { ShowInCarousel } from "../Carousel";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
