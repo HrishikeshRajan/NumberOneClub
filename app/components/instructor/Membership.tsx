@@ -3,7 +3,7 @@ import CustomButton from "../theme/CustomButton";
 import { Heading } from "../Heading";
 import VideoConference from "../VideoConference";
 import AskNoa from "../AskNoa";
-import EnableClickAnimation from "../animation/EnableClickAnimation";
+import EnableClickAnimation from "../ui/animation/EnableClickAnimation";
 
 interface MentorshipDetailsProps {
   title: string;

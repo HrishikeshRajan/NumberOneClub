@@ -2,7 +2,7 @@
 import React from 'react'
 import { Heading } from '../Heading'
 import CustomButton from '../theme/CustomButton'
-import EnableClickAnimation from '../animation/EnableClickAnimation';
+import EnableClickAnimation from '../ui/animation/EnableClickAnimation';
 
 const Tab2Content = () => {
   return (

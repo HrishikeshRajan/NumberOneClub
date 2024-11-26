@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
     } from "@/components/ui/input-otp";
     import { Heading } from "../Heading";
     import CustomButton from "../theme/CustomButton";
-    import EnableClickAnimation from "../animation/EnableClickAnimation";
+    import EnableClickAnimation from "../ui/animation/EnableClickAnimation";
     import Link from "next/link";
     import { useState } from "react";
 

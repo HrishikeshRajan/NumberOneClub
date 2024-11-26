@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import CustomButton from './theme/CustomButton'
-import EnableClickAnimation from './animation/EnableClickAnimation'
+import EnableClickAnimation from './ui/animation/EnableClickAnimation'
 export default function AskNoa() {
   return (
     <div className='bg-background-cornsilk w-full px-2 py-2 rounded-full flex items-center gap-2 justify-between text-Skobeloff '>

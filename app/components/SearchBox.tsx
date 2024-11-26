@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Form from 'next/form';
 import CustomButton from './theme/CustomButton';
-import EnableClickAnimation from './animation/EnableClickAnimation';
+import EnableClickAnimation from './ui/animation/EnableClickAnimation';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 

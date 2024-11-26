@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import CustomButton from './theme/CustomButton'
-import EnableClickAnimation from './animation/EnableClickAnimation';
-import EnableTextEaseAnimation from './animation/EnableTextEaseAnimation';
+import EnableClickAnimation from './ui/animation/EnableClickAnimation';
+import EnableTextEaseAnimation from './ui/animation/EnableTextEaseAnimation';
 
 function VideoConference() {
     const [duration, setDuration] = useState(30);
