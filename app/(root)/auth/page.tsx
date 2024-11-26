@@ -1,5 +1,5 @@
 import { InputOTPFields } from "@/app/components/auth/Otp";
-import { CustomDialog } from "@/app/components/Modal";
+import { CustomDialog } from "@/app/components/ui/modals/Modal";
 import React from "react";
 
 function page() {

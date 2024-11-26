@@ -10,7 +10,7 @@ import Link from "next/link"
 import { NavLinksValues } from "../seed/navLinks"
 import { CreatorsNavMenu } from "./CreatorsDropDown"
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { CustomDialog } from "./Modal"
+import { CustomDialog } from "./ui/modals/Modal"
 import { InputOTPFields } from "./auth/Otp"
 
 function SideSheet() {
