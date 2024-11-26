@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar"
+import SideSheet from "../components/ui/modals/SideSheet"
 
 export default function Layout({
     children
@@ -8,6 +9,7 @@ export default function Layout({
     return (
       <main>
         <Navbar />
+        <SideSheet />
         {children}
       </main>
     )
