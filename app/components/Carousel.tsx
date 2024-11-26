@@ -33,7 +33,7 @@ export function ShowInCarousel({
   return (
     <Carousel 
      opts={{
-      containScroll: false,
+      containScroll: 'keepSnaps',
       align:'start',
       loop: loop,
       dragFree:true

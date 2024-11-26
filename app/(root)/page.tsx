@@ -102,9 +102,11 @@ async function page({searchParams}: {
             <ShowInCarousel 
             items={cards}
             autoplay={true}
-            interval={5000}
+            interval={4000}
+            loop={true}
             className=' max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full'
             itemClassName='pl-5  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-2/6 xl:basis-1/4'  
+            contentClassName='ml-10'
             />
         </div>
 
