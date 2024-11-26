@@ -1,8 +1,8 @@
-"use client"
+
 import React from 'react'
-import { Heading } from '../Heading'
-import CustomButton from '../ui/theme/CustomButton'
-import EnableClickAnimation from '../ui/animation/EnableClickAnimation';
+import { Heading } from '../../Heading'
+import CustomButton from '../../ui/theme/CustomButton'
+import EnableClickAnimation from '../../ui/animation/EnableClickAnimation';
 
 const Tab2Content = () => {
   return (

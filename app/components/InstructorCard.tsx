@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 export type InstructorCardProps = {
+  id: number
   name: string;
   company: string;
   rating: number;
