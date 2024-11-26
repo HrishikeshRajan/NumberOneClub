@@ -1,6 +1,6 @@
 
 
-import instructors from '@/app/seed/instructors';
+import {instructors} from '@/app/seed/instructors';
 import React from 'react'
 import CardWithInstructor from '../InstructorCard';
 import EnableLink from '../ui/decorators/EnableLink';
@@ -27,6 +27,7 @@ async function InstructorList( {}:InstructorListProps)  {
       instructors.map((instructor) => (
         <EnableLink key={instructor.id} href={`instructor/:${instructor.id}`} className="p-2 mt-0">
           <CardWithInstructor
+            id={instructor.id}
             name={instructor.name}
             company={instructor.company}
             rating={instructor.rating}
