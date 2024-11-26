@@ -2,11 +2,11 @@
 
 import instructors from '@/app/seed/instructors';
 import React from 'react'
-import { withLink } from '../decorators/WithLink';
+import { withLink } from '../ui/decorators/WithLink';
 import CardWithInstructor, { InstructorCardProps } from '../InstructorCard';
 import { instructor } from '../../seed/instructor';
 import { ShowInCarousel } from '../Carousel';
-import EnableLink from '../decorators/EnableLink';
+import EnableLink from '../ui/decorators/EnableLink';
 
  type InstructorListProps = {
     query?: string;

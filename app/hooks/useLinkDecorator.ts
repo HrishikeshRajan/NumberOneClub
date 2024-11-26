@@ -1,4 +1,4 @@
-import withLink from "../components/decorators/WithLink";
+import withLink from "../components/ui/decorators/WithLink";
 
 
 
