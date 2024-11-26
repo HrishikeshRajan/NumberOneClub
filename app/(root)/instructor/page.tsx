@@ -1,10 +1,9 @@
 
 
-import { ShowInCarousel } from '@/app/components/Carousel'
+
 import InstructorList from '@/app/components/instructor/InstructorList'
 import SearchBox from '@/app/components/SearchBox'
-import InstructorSkeleton from '@/app/components/skeletons/Instructor'
-import InstructorSkeletonList from '@/app/components/skeletons/InstructorSkeletonList'
+import InstructorSkeleton from '@/app/components/ui/skeletons/Instructor'
 import InstructorSortTab from '@/app/components/tab/InstructorSortTab'
 import { useDuplicateComponents } from '@/app/hooks/useDuplicate'
 import { categorySeed } from '@/app/seed/Category'
