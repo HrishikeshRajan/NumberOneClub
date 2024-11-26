@@ -36,7 +36,7 @@ export function ShowInCarousel({
       containScroll: 'keepSnaps',
       align:'start',
       loop: loop,
-      dragFree:true
+      dragFree:false
      }}
     plugins={autoplay ? [Autoplay({ delay: interval, stopOnInteraction: false, stopOnMouseEnter:true })]:[]}
     className={twMerge('w-full max-w-md md:max-w-3xl lg:max-w-6xl' ,className)}>
