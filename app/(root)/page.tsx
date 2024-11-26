@@ -8,10 +8,10 @@ import CardWithInstructor, { InstructorCardProps } from '../components/Instructo
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
 import instructors from '../seed/instructors';
-import { withLink } from '../components/ui/decorators/WithLink';
 import CustomButton from '../components/ui/theme/CustomButton';
 import EnableClickAnimation from '../components/ui/animation/EnableClickAnimation';
 import EnableLink from '../components/ui/decorators/EnableLink';
+
 
 
 
@@ -39,20 +39,21 @@ async function page({searchParams}: {
         />
     ]
 
-   const InstructorCardWithLink =  withLink<InstructorCardProps & { href: string }>(CardWithInstructor)
    
     let instructorsList:any[] = []
 
     if(Array.isArray(instructors) && instructors.length > 0) {
         instructorsList = instructors.map((instructor) => (
-            <InstructorCardWithLink
+         <EnableLink href={`instructor/:${instructor.id}`} key={instructor.id}>
+             <CardWithInstructor
             key={instructor.id}
             name={instructor.name}
             company={instructor.company}
             rating={instructor.rating}
             image={instructor.image}
             backgroundColor={instructor.backgroundColor}
-            href={`instructor/:${instructor.id}`}            />
+                      />
+         </EnableLink>
         ))
     }
 
