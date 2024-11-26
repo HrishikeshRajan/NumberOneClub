@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-* {
-  scroll-behavior: smooth;
-}
+
 
 @layer base {
   :root {
@@ -36,6 +31,7 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --font-euclid: 'Euclid Circular A', sans-serif;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -63,6 +59,13 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+body {
+  font-family: var(--font-euclid);
+}
+* {
+  scroll-behavior: smooth;
 }
 
 @layer base {
