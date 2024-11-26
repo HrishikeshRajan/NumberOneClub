@@ -1,16 +1,17 @@
 
 import React from 'react'
 import { Heading } from '../components/Heading'
-import SearchBox from '../components/SearchBox'
-import CategoryCard from '../components/CategoryCard';
+import SearchBox from '../components/ui/theme/SearchBox'
 import { ShowInCarousel } from '../components/ui/sliders/Carousel';
-import CardWithInstructor, { InstructorCardProps } from '../components/InstructorCard';
+import CardWithInstructor from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
-import instructors from '../seed/instructors';
+import {instructors} from '../seed/instructors';
 import CustomButton from '../components/ui/theme/CustomButton';
 import EnableClickAnimation from '../components/ui/animation/EnableClickAnimation';
 import EnableLink from '../components/ui/decorators/EnableLink';
+import { categoryCards } from '../seed/Category';
+import CategoryCard from '../components/CategoryCard';
 
 
 
@@ -20,27 +21,26 @@ async function page({searchParams}: {
 }) {
 
     const query = await (await (searchParams))?.query;
-    const cards = [
-        <CategoryCard 
-        title='Marketing' 
-        description='I am looking for a digital marketing expert' 
-        />,
-        <CategoryCard 
-        title='Sales' 
-        description='Can somebody help me build my sales team?' 
-        />,
-        <CategoryCard 
-        title='Design' 
-        description='Can someone please refer some good graphic designers?' 
-        />,
-        <CategoryCard 
-        title='Finance' 
-        description='My accounts are a nightmare! Please help me find a local CA' 
-        />
-    ]
+
+
+
+    let cards: React.ReactNode[] = [];
 
    
-    let instructorsList:any[] = []
+
+    if(Array.isArray(categoryCards) && categoryCards.length > 0) {
+      cards = categoryCards.map((card) => (
+       <EnableLink href={`category/:${card.id}`} key={card.id}>
+           <CategoryCard
+          key={card.id}
+          title={card.name}
+          description={card.description}
+                    />
+       </EnableLink>
+      )) as never;
+  }
+
+    let instructorsList:React.ReactNode[] = []
 
     if(Array.isArray(instructors) && instructors.length > 0) {
         instructorsList = instructors.map((instructor) => (
@@ -54,7 +54,7 @@ async function page({searchParams}: {
             backgroundColor={instructor.backgroundColor}
                       />
          </EnableLink>
-        ))
+        )) as never;
     }
 
     const tabsData = [

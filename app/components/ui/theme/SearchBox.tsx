@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Form from 'next/form';
-import CustomButton from './ui/theme/CustomButton';
-import EnableClickAnimation from './ui/animation/EnableClickAnimation';
+import CustomButton from './CustomButton';
+import EnableClickAnimation from '../animation/EnableClickAnimation';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 
@@ -13,7 +13,7 @@ type SearchBoxProps = {
  placeholder?: string,
  onClick?: (query: string) => void;
 }
- function SearchBox({query, placeholder = 'Search here',  onClick}:SearchBoxProps) {
+ function SearchBox({placeholder = 'Search here'}:SearchBoxProps) {
   
   const searchParams = useSearchParams()
 

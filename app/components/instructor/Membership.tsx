@@ -19,8 +19,6 @@ const MentorshipDetails: React.FC<MentorshipDetailsProps> = ({
   tags,
   description,
   expectations,
-  duration,
-  price,
 }) => {
   return (
     <div className="flex-1 max-w-full px-4 py-4 xl:max-w-full bg-white lg:p-6 rounded-2xl shadow-booking-card-shadow font-euclid">

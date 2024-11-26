@@ -1,4 +1,4 @@
-export default  [
+export  const instructors = [
     {
         id: 1,
         name: 'Deepa Varghese',

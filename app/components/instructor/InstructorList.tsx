@@ -2,24 +2,21 @@
 
 import instructors from '@/app/seed/instructors';
 import React from 'react'
-import { withLink } from '../ui/decorators/WithLink';
-import CardWithInstructor, { InstructorCardProps } from '../InstructorCard';
-import { instructor } from '../../seed/instructor';
-import { ShowInCarousel } from '../ui/sliders/Carousel';
+import CardWithInstructor from '../InstructorCard';
 import EnableLink from '../ui/decorators/EnableLink';
 
  type InstructorListProps = {
     query?: string;
     page?: number;
  }
-async function InstructorList( {query, page}:InstructorListProps) {
+async function InstructorList( {}:InstructorListProps)  {
 
 
     async function fetchWithDelay() {
         return   await new Promise((resolve) => setTimeout(() => resolve(resolve({instructors})), 2000)); 
        }
        
-       const data:any = await fetchWithDelay();
+       const data = await fetchWithDelay() as {instructors: InstructorListProps} ;
 
    
 

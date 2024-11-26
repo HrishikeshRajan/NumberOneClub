@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import {
     Dialog,
   DialogContent,
@@ -22,8 +21,6 @@ type DialogProps = {
 };
 
 export function CustomDialog({
-  triggerText,
-  triggerVariant = "outline",
   dialogTitle,
   dialogDescription,
   content,

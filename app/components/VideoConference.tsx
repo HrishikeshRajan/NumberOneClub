@@ -7,7 +7,7 @@ import EnableTextEaseAnimation from './ui/animation/EnableTextEaseAnimation';
 
 function VideoConference() {
     const [duration, setDuration] = useState(30);
-    const [price, setPrice] = useState(800); 
+    const [, setPrice] = useState(800); 
   
     const handleIncrease = () => {
       setDuration((prev) => prev + 15);

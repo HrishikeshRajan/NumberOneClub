@@ -2,12 +2,11 @@
 
 
 import InstructorList from '@/app/components/instructor/InstructorList'
-import SearchBox from '@/app/components/SearchBox'
+import SearchBox from '@/app/components/ui/theme/SearchBox'
 import InstructorSkeleton from '@/app/components/ui/skeletons/Instructor'
 import InstructorSortTab from '@/app/components/tab/InstructorSortTab'
-import { useDuplicateComponents } from '@/app/hooks/useDuplicate'
+import React, { Suspense } from 'react'
 import { categorySeed } from '@/app/seed/Category'
-import { Suspense } from 'react'
 
 type InstuctorListProps = {
   searchParams?: Promise<{
@@ -26,7 +25,6 @@ async function Page(props: InstuctorListProps) {
   const currentPage = Number(searchParams?.page) || 1;
 
 
-  const  shimmers = useDuplicateComponents({duplicate:10, Component:InstructorSkeleton, className :"w-auto"})
 
   return (
     <div className='overflow-hidden'>
@@ -39,7 +37,7 @@ async function Page(props: InstuctorListProps) {
           fallback={
            <div className='xl:p-20'>
               <div className=' mt-5 xl:-mt-5 grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-               { Array.from({ length: 10 }).map((_, index) => <div className='p-2 mt-0'><InstructorSkeleton className='w-auto' key={index} /></div>) }
+               { Array.from({ length: 10 }).map((_, index) => <div key={index} className='p-2 mt-0'><InstructorSkeleton className='w-auto' key={index} /></div>) }
             </div>
            </div>
           } >
