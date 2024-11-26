@@ -5,7 +5,7 @@ import React from 'react'
 import { withLink } from '../ui/decorators/WithLink';
 import CardWithInstructor, { InstructorCardProps } from '../InstructorCard';
 import { instructor } from '../../seed/instructor';
-import { ShowInCarousel } from '../Carousel';
+import { ShowInCarousel } from '../ui/sliders/Carousel';
 import EnableLink from '../ui/decorators/EnableLink';
 
  type InstructorListProps = {

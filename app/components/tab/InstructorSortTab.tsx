@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import CustomButton from "../ui/theme/CustomButton";
-import { ShowInCarousel } from "../Carousel";
+import { ShowInCarousel } from "../ui/sliders/Carousel";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type CategorySeed = {

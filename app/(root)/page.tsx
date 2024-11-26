@@ -3,7 +3,7 @@ import React from 'react'
 import { Heading } from '../components/Heading'
 import SearchBox from '../components/SearchBox'
 import CategoryCard from '../components/CategoryCard';
-import { ShowInCarousel } from '../components/Carousel';
+import { ShowInCarousel } from '../components/ui/sliders/Carousel';
 import CardWithInstructor, { InstructorCardProps } from '../components/InstructorCard';
 import ExpertTab from '../components/ExpertTab';
 import Tab2Content from '../components/tab/Tab2Content';
