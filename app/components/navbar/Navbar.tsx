@@ -13,10 +13,10 @@ function Navbar() {
             <nav className='max-w-7xl  mx-auto flex items-center justify-center xl:justify-between text-Skobeloff'  aria-label="Main navigation">
                 {/* Logo Section */}
                 <div className=' flex items-center bg-dark lg:gap-10 xl:gap-20'>
-                    <Link href="/">
+                    <Link href="/" aria-label='company logo'>
                         <Image
                             src="/logo.svg"
-                            alt="Logo"
+                            alt="company logo"
                             width={500}
                             height={500}
                             className=' w-16 h-16 xl:w-auto transition-all duration-300'
