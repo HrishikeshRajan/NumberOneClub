@@ -2,8 +2,10 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import { NavLinks } from './NavLinks'
-import AuthButtons from './AuthButton'
+import { NavLinks } from '../NavLinks'
+import AuthButtons from '../AuthButton'
+import { navItems } from '@/app/seed/navLinks'
+import { CreatorsNavMenu } from '../CreatorsDropDown'
 
 function Navbar() {
     return (
@@ -21,12 +23,13 @@ function Navbar() {
                             priority />
                     </Link>
                     <div className={`hidden lg:flex items-center space-x-6 font-euclid font-bold`}>
-                        <NavLinks className={`hidden xl:flex items-center space-x-6 font-euclid`} />
+                       <CreatorsNavMenu />
+                        <NavLinks items={navItems}  className={`hidden xl:flex items-center space-x-6 font-euclid`} />
                     </div>
                 </div>
 
                 {/* Auth Buttons - Hidden on Mobile */}
-                <div className='hidden xl:flex items-center space-x-4'>
+                <div className='hidden xl:flex items-center space-x-4' aria-label="Login Section">
                    <AuthButtons />
                 </div>
             </nav>

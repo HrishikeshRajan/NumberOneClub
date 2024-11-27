@@ -1,4 +1,4 @@
-"use client"
+
 import {
   Sheet,
   SheetContent,
@@ -8,10 +8,10 @@ import {
 import Image from 'next/image'
 import Link from "next/link"
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
-import { NavLinksValues } from "@/app/seed/navLinks"
 import { InputOTPFields } from "../../auth/Otp"
 import { CustomDialog } from "./Modal"
 import { CreatorsNavMenu } from "../../CreatorsDropDown"
+import { navItems } from "@/app/seed/navLinks"
 
 function SideSheet() {
   return (
@@ -46,7 +46,7 @@ function SideSheet() {
         dialogDescription=""
         content={<InputOTPFields PhoneNumber="+2348123456789" />}
       />
-         {NavLinksValues.map((link) => (
+         {Array.isArray(navItems) && navItems.length && navItems.map((link) => (
           <Link href={link.path} key={link.path} className='flex items-center gap-2 p-2  transition-colors text-lg font-semibold text-Skobeloff'>
 
             <p className='text-sm capitalize'>{link.label}</p>

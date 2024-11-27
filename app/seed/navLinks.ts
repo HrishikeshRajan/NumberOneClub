@@ -1,3 +1,5 @@
+import { NavLink } from "../components/navbar/types";
+
 enum NavLinkPath {
     CREATORS = '/creators',
     BENEFITS = '/benefits',
@@ -6,24 +8,21 @@ enum NavLinkPath {
   };
 
 
-export const NavLinksValues = [
+export const navItems: NavLink[] = [
 
     {
-        id:2,
+        id:'2',
         path: NavLinkPath.BENEFITS,
         label: 'Benefits',
-        className: 'relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform',
-    },
+ },
     {
-        id:3,
+        id:'3',
         path: NavLinkPath.PRICING,
         label: 'Pricing',
-        className: 'relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform',
-    },
+  },
     {   
-        id:4,
+        id:'4',
         path: NavLinkPath.CALCULATOR,
         label: 'Calculator',
-        className: 'relative transition-colors nav-text after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-border-skobeloff after:origin-left after:transition-transform',
-    }
+  }
 ]

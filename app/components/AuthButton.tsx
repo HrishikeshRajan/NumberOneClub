@@ -19,7 +19,7 @@ export default function AuthButtons() {
                 activeButton === "signup"
                   ? "bg-Skobeloff text-white"
                   : "hover:bg-Skobeloff hover:text-white"
-              } hover:text-white`}
+              } hover:text-white `}
           asChild
           onClick={() => setActiveButton("signup")}
         >

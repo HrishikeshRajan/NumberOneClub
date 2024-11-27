@@ -1,17 +1,15 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { CreatorsNavMenu } from "./CreatorsDropDown";
-import { NavLinksValues } from "../seed/navLinks";
+import { NavLinkProps } from "./navbar/types";
 
-export function NavLinks({ className }: { className: string }) {
+export function NavLinks({ className, items }: NavLinkProps) {
   const pathname = usePathname();
 
   return (
     <div className={className}>
-      <CreatorsNavMenu />
 
-      {NavLinksValues.map((link) => (
+      {Array.isArray(items) && items.length ? items?.map((link) => (
         <Link
           key={link.path}
           href={link.path}
@@ -23,7 +21,7 @@ export function NavLinks({ className }: { className: string }) {
         >
           {link.label}
         </Link>
-      ))}
+      )): ''}
     </div>
   );
 }
