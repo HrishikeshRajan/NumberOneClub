@@ -29,7 +29,10 @@ async function Page(props: InstuctorListProps) {
   return (
     <div className='overflow-hidden'>
       <div className='mt-28'>
-      <SearchBox />
+        
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchBox placeholder="Search for experts by Name, Expertise" />
+      </Suspense>
       </div>
        <InstructorSortTab seed={categorySeed} />
    

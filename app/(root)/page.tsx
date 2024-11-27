@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Heading } from "../components/Heading";
 import SearchBox from "../components/ui/theme/SearchBox";
 import { ShowInCarousel } from "../components/ui/sliders/Carousel";
@@ -29,7 +29,9 @@ async function page() {
         title="What’s on your mind?"
         className=" yellow-green-gradient text-3xl sm:text-5xl mt-10  md:text-4xl xl:text-5xl font-extrabold font-euclid"
       />
-      <SearchBox placeholder="Search for Courses, Events, Instructors, Experts etc" />
+        <Suspense fallback={<div>Loading...</div>}>
+        <SearchBox placeholder="Search for Courses, Events, Instructors, Experts etc" />
+      </Suspense>
       <div className="mt-5 xl:mt-10 bg-darkslategra overflow-hidden flex justify-center">
         <ShowInCarousel
           items={cards}

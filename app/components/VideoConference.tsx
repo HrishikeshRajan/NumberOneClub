@@ -7,7 +7,7 @@ import EnableTextEaseAnimation from './ui/animation/EnableTextEaseAnimation';
 
 function VideoConference() {
     const [duration, setDuration] = useState(30);
-    const [, setPrice] = useState(800); 
+    const [price, setPrice] = useState(800); 
   
     const handleIncrease = () => {
       setDuration((prev) => prev + 15);
@@ -71,7 +71,7 @@ function VideoConference() {
             className=" text-sm px-6 py-1 rounded-full border-2 border-Skobeloff bg-Skobeloff text-white hover:bg-Skobeloff hover:text-white  transition font-semibold"
             aria-label="Price button"
           >
-            ₹800
+            ₹{price}
           </CustomButton>
         
        </div>
