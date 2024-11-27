@@ -8,10 +8,10 @@ import {
 import Image from 'next/image'
 import Link from "next/link"
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
-import { InputOTPFields } from "../../auth/Otp"
 import { CustomDialog } from "./Modal"
 import { CreatorsNavMenu } from "../../CreatorsDropDown"
 import { navItems } from "@/app/seed/navLinks"
+import Auth from "../../auth/auth"
 
 function SideSheet() {
   return (
@@ -44,7 +44,7 @@ function SideSheet() {
         triggerVariant="ghost"
         dialogTitle=""
         dialogDescription=""
-        content={<InputOTPFields PhoneNumber="+2348123456789" />}
+        content={<Auth />}
       />
          {Array.isArray(navItems) && navItems.length && navItems.map((link) => (
           <Link href={link.path} key={link.path} className='flex items-center gap-2 p-2  transition-colors text-lg font-semibold text-Skobeloff'>

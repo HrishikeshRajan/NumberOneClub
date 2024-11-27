@@ -15,6 +15,12 @@ function PhoneNumber() {
     setSelected(value);
   }
 
+
+  function submitPhoneNumber(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault()
+    console.log(selected)
+  }
+
   return (
     <Card className="w-full h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
     <Heading
@@ -52,7 +58,7 @@ function PhoneNumber() {
   
         {/* Sign-in Button */}
         <EnableClickAnimation className='w-full' > 
-        <CustomButton className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
+        <CustomButton onClick={(e) => submitPhoneNumber(e)} className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
                 Sign in
         </CustomButton>
         </EnableClickAnimation>

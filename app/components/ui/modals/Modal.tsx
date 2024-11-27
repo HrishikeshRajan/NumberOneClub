@@ -35,7 +35,7 @@ export function CustomDialog({
       </DialogTrigger>
 
       {/* Dialog Content */}
-      <DialogContent className="w-auto bg-transparent ring-0 border-0">
+      <DialogContent className="w-full bg-transparent ring-0 border-0">
         <DialogHeader>
           <DialogTitle>{dialogTitle}</DialogTitle>
           {dialogDescription && <DialogDescription>{dialogDescription}</DialogDescription>}
