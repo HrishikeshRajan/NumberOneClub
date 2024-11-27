@@ -9,7 +9,6 @@ import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 
 type SearchBoxProps = {
- query?:string,
  placeholder?: string,
  onClick?: (query: string) => void;
 }

@@ -7,13 +7,8 @@ import { categoryCards } from "../seed/Category";
 import CategoryCard from "../components/CategoryCard";
 import TabExpert from "../components/tab/expert/TabExpert";
 
-async function page({
-  searchParams,
-}: {
-  searchParams: Promise<{ query: string }>;
-}) {
-  const query = await (await searchParams)?.query;
-
+async function page() {
+ 
   let cards: React.ReactNode[] = [];
 
   if (Array.isArray(categoryCards) && categoryCards.length > 0) {
@@ -34,7 +29,7 @@ async function page({
         title="What’s on your mind?"
         className=" yellow-green-gradient text-3xl sm:text-5xl mt-10  md:text-4xl xl:text-5xl font-extrabold font-euclid"
       />
-      <SearchBox query={query} />
+      <SearchBox placeholder="Search for Courses, Events, Instructors, Experts etc" />
       <div className="mt-5 xl:mt-10 bg-darkslategra overflow-hidden flex justify-center">
         <ShowInCarousel
           items={cards}
