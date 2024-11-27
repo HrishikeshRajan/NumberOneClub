@@ -73,7 +73,9 @@ export default {
 			gray: '#797979',
 			gainsboro: '#D0E4E5',
 			whitesmoke: '#EFEFF0',
-			mediumseagreen: '#00C294'
+			mediumseagreen: '#00C294',
+			
+			crystalsongblue:'#808080'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
