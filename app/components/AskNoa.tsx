@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import CustomButton from './ui/theme/CustomButton'
 import EnableClickAnimation from './ui/animation/EnableClickAnimation'
+import ThemedButton from './ui/theme/button/ThemedButton'
 export default function AskNoa() {
   return (
     <div className='bg-background-cornsilk w-full px-2 py-2 rounded-full flex items-center gap-2 justify-between text-Skobeloff '>
@@ -21,9 +22,13 @@ export default function AskNoa() {
             <div>
 
                 <EnableClickAnimation>
-                    <CustomButton className='px-4 py-2 text-Skobeloff text-xs lg:text-md font-semibold shadow-none  rounded-full bg-background-palegoldenrod active::bg-background-palegoldenrod hover:bg-background-palegoldenrod active:text-Skobeloff'> 
-                    Ask Noa
-                    </CustomButton>
+                
+                    <ThemedButton
+                      colorTheme='skobeloff'
+                        className='px-4 py-2 text-Skobeloff text-xs lg:text-md font-semibold shadow-none border-none  rounded-full bg-background-palegoldenrod active:bg-background-palegoldenrod hover:bg-background-palegoldenrod  hover:text-Skobeloff active:text-Skobeloff'
+                    >
+                       Ask Noa
+                    </ThemedButton>
                 </EnableClickAnimation>
             </div>
         </div>
