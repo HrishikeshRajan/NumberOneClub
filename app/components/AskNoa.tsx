@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import CustomButton from './ui/theme/CustomButton'
 import EnableClickAnimation from './ui/animation/EnableClickAnimation'
 import ThemedButton from './ui/theme/button/ThemedButton'
 export default function AskNoa() {

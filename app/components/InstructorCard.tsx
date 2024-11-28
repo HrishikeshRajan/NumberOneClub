@@ -14,17 +14,17 @@ export default function CardWithInstructor({name,company,rating,image,background
   return (
     <div className={twMerge('flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]', className)}>
       {/* Image */}
-      <div className={`w-full h-28   relative  ${backgroundColor || 'bg-green-gradient'} rounded-t-2xl mt-10 shadow-lg `}>
+      <div className={`w-full h-28   relative  ${backgroundColor || 'bg-green-gradient'} rounded-t-2xl mt-10 shadow-lg overflow-visible `}>
         <Image
         src={image} 
         alt="Profile Picture"
          width={200}
          height={200}
-        className="rounded-t-lg w-2/3 h-auto  -z-9 absolute top-0 left-0 right-0 object-cover mt-1"
+        className="rounded-t-lg w-auto h-auto  -z-9 absolute top-0 left-0 right-0 object-cover "
         style={{
-          
+          scale:'1',
          position: 'absolute',
-         top: '20px',
+         top: '30px',
          left: '50%',
          transform: 'translate(-50%, -50%)'
 
@@ -47,7 +47,7 @@ export default function CardWithInstructor({name,company,rating,image,background
 
         {/* Rating */}
         <div className="mt-2 flex items-center justify-start gap-1">
-          <Image src="/star.svg" width={16} height={16} className='w-auto h-auto' alt="Star Icon" />
+          <Image src="/star.svg" width={16} height={16} alt="Star Icon" />
           <span className="text-darkslategray text-lg font-semibold">{rating}</span>
         </div>
       </div>

@@ -14,7 +14,7 @@ export  const instructors = [
         name: 'Sandeep Mishra',
         company: 'Technology Consultant Of India',  
         rating: 4.9,
-        image: '/tech-man.png',
+        image: '/lady-2.svg',
         backgroundColor: 'bg-yellow-gradient',
     },
     {
@@ -40,7 +40,7 @@ export  const instructors = [
         name: 'Sandeep Mishra',
         company: 'Technology Consultant',
         rating: 4.9,
-        image: '/tech-man.png',
+        image: '/lady-2.svg',
         backgroundColor: 'bg-yellow-gradient',
     },
     {

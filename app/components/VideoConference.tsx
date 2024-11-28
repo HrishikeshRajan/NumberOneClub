@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import CustomButton from './ui/theme/CustomButton'
 import EnableClickAnimation from './ui/animation/EnableClickAnimation';
 import EnableTextEaseAnimation from './ui/animation/EnableTextEaseAnimation';
+import ThemedButton from './ui/theme/button/ThemedButton';
 
 function VideoConference() {
     const [duration, setDuration] = useState(30);
@@ -67,12 +68,15 @@ function VideoConference() {
   
         {/* Price */}
       
-          <CustomButton
-            className=" text-sm px-6 py-1 rounded-full border-2 border-Skobeloff bg-Skobeloff text-white hover:bg-Skobeloff hover:text-white  transition font-semibold"
-            aria-label="Price button"
+     
+
+          <ThemedButton
+          className='text-white text-xs'
+               colorTheme='skobeloff'
+               aria-label="Price button"
           >
-            ₹{price}
-          </CustomButton>
+               ₹{price}
+          </ThemedButton>
         
        </div>
       </div>
