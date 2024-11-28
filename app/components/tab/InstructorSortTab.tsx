@@ -70,13 +70,14 @@ function InstructorSortTab({ seed }: { seed: Array<CategorySeed> }) {
 
 
   return (
-    <div className="mt-1 justify-center gap-10 w-full flex items-center relative ">
+    <div className="my-8 justify-center  w-full flex items-center relative ">
         <ShowInCarousel 
             items={tabs}
             autoplay={false}
             loop={false}
-            className='max-w-ful sm:max-w-full md:max-w-full lg:max-w-full '
-            itemClassName=' pl-4  basis-auto md:pl-5 md:basis-auto  lg:pl-5 lg:basis-auto  xl:pl-10  xl:basis-auto'  
+            className='max-w-full sm:max-w-full md:max-w-full lg:max-w-full'
+            itemClassName='pl-5  basis-auto md:pl-5 md:basis-auto  lg:pl-5 lg:basis-auto  xl:pl-10  xl:basis-auto'
+            contentClassName="pl-5"  
             />
     </div>
   );

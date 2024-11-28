@@ -21,7 +21,7 @@ async function InstructorList( {}:InstructorListProps)  {
    
 
   return (
-<div className="xl:p-20">
+<div className="xl:p-20 mt-20">
   <div className="mt-5 xl:-mt-5 grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     {Array.isArray(data?.instructors) && instructors.length > 0 &&
       instructors.map((instructor) => (

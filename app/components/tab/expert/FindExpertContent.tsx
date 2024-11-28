@@ -9,14 +9,15 @@ function FindExpertContent({
   instructorsList: React.ReactNode[];
 }) {
   return (
-    <div className="mt-5 py-5 w-full ">
+    <div className="mt-1  w-full ">
       <ShowInCarousel
         items={instructorsList}
-        autoplay={false}
+        autoplay={true}
         interval={5000}
 
-        className="max-w-md sm:max-w-6xl md:max-w-full lg:max-w- xl:max-w-full"
-        itemClassName="pl-5 basis-auto xs:basis-auto sm:basis-auto md:basis-auto lg:basis-auto xl:basis-auto"
+        className="max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full xl:max-w-full"
+        itemClassName="pl-5 mt-16 basis-auto xs:basis-auto sm:pl-10  sm:basis-auto md:pl-8  md:basis-auto lg:pl-8  lg:basis-auto xl:pl-10 xl:basis-auto"
+        contentClassName="ml-1 py-10 xl:ml-20"
       />
       <div className="w-full flex justify-center items-center">
         <EnableClickAnimation>

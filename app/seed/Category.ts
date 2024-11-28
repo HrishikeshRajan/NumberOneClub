@@ -37,6 +37,6 @@ export const categoryCards = [
     },    {
         id: 4,
         name: 'Finance',
-        description: 'My accounts are a nightmare! Please help me find a local CA?'
+        description: 'My accounts are a nightmare! Please help me find a local CA'
     }
 ]

@@ -38,7 +38,7 @@ async function Page(props: InstuctorListProps) {
    
       <Suspense key={query + currentPage + tag} 
           fallback={
-           <div className='xl:p-20'>
+           <div className='xl:p-20 mt-20'>
               <div className=' mt-5 xl:-mt-5 grid gap-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
                { Array.from({ length: 10 }).map((_, index) => <div key={index} className='p-2 mt-0'><InstructorSkeleton className='w-auto' key={index} /></div>) }
             </div>

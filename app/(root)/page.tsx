@@ -24,7 +24,7 @@ async function page() {
   }
 
   return (
-    <section className="flex justify-center flex-col items-center overflow-x-hidden">
+    <section className="flex justify-center flex-col items-center ">
       <Heading
         title="What’s on your mind?"
         className=" yellow-green-gradient text-3xl sm:text-5xl mt-10  md:text-4xl xl:text-5xl font-extrabold font-euclid"
@@ -32,15 +32,15 @@ async function page() {
         <Suspense fallback={<div>Loading...</div>}>
         <SearchBox placeholder="Search for Courses, Events, Instructors, Experts etc" />
       </Suspense>
-      <div className="mt-5 xl:mt-10 bg-darkslategra overflow-hidden flex justify-center">
+      <div className="mt-5 py-5 xl:mt-10 w-full  flex justify-center ">
         <ShowInCarousel
           items={cards}
-          autoplay={true}
+          autoplay={false}
           interval={4000}
           loop={true}
-          className=" max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full"
-          itemClassName="pl-5  basis-2/3 sm:basis-2/3 md:basis-2/5 lg:basis-2/6 xl:basis-1/4"
-          contentClassName="ml-10"
+          className=" w-full max-w-md sm:max-w-6xl md:max-w-full lg:max-w-full xl:max-w-full"
+          itemClassName="pl-5 basis-auto xs:basis-auto sm:basis-auto md:basis-auto lg:basis-auto xl:pl-auto xl:basis-auto"
+          contentClassName="ml-1 py-10 xl:ml-20"
         />
       </div>
 

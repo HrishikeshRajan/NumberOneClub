@@ -13,7 +13,7 @@ type CategoryCardProps = {
 }
 function CategoryCard({title,description}:CategoryCardProps) {
   return (
-     <Card className='w-auto min-h-44 shadow-category font-euclid rounded-3xl'>
+     <Card className='w-[294px] max-w-[294px] min-h-44 shadow-category font-euclid rounded-3xl'>
       <CardHeader>
         <CardTitle className='text-darkslategray text-xl font-semibold line-clamp-2'>{title}</CardTitle>
       </CardHeader>
