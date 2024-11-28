@@ -18,16 +18,18 @@ export default function CardWithInstructor({name,company,rating,image,background
         <Image
         src={image} 
         alt="Profile Picture"
-         width={150}
-         height={150}
-        className="rounded-t-lg  -z-9 absolute top-0 left-0 right-0 object-cover"
+         width={200}
+         height={200}
+        className="rounded-t-lg w-2/3 h-auto  -z-9 absolute top-0 left-0 right-0 object-cover mt-1"
         style={{
+          
          position: 'absolute',
          top: '20px',
          left: '50%',
          transform: 'translate(-50%, -50%)'
 
         }}
+        property={'true'}
         />
       </div>
 
@@ -45,7 +47,7 @@ export default function CardWithInstructor({name,company,rating,image,background
 
         {/* Rating */}
         <div className="mt-2 flex items-center justify-start gap-1">
-          <Image src="/star.svg" width={16} height={16} alt="Star Icon" />
+          <Image src="/star.svg" width={16} height={16} className='w-auto h-auto' alt="Star Icon" />
           <span className="text-darkslategray text-lg font-semibold">{rating}</span>
         </div>
       </div>

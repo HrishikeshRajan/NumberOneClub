@@ -8,20 +8,14 @@ export default function InstructorSkeleton({className}: {className?:string}) {
     <div className={twMerge('flex flex-col h-80  items-center  rounded-2xl w-[228.91px] xl:max-w-[228.91px]', className)}>
       {/* Image */}
       <Skeleton className={`w-full h-28   relative  rounded-t-2xl mt-10 shadow-lg `}>
-        <Image
-        src= "lady-2.svg" 
+      <Image
+        src="lady-2.svg"
         alt="Profile Picture"
-         width={150}
-         height={150}
-        className="rounded-t-lg  -z-9 absolute top-0 left-0 right-0 object-cover"
-        style={{
-         position: 'absolute',
-         top: '20px',
-         left: '50%',
-         transform: 'translate(-50%, -50%)'
+        width={150}
+        height={150}
+        className="rounded-t-lg -z-9 absolute top-[20px] left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover"
+      />
 
-        }}
-        />
       </Skeleton>
 
       {/* Info */}

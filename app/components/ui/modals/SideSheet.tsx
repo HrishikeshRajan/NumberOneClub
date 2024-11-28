@@ -2,6 +2,7 @@
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
@@ -31,6 +32,10 @@ function SideSheet() {
           
       <VisuallyHidden.Root>
         <SheetTitle>Sidebar</SheetTitle>
+      </VisuallyHidden.Root>
+
+      <VisuallyHidden.Root>
+        <SheetDescription>The is main sidebar</SheetDescription>
       </VisuallyHidden.Root>
 
      
