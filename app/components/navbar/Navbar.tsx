@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import { NavLinks } from '../NavLinks'
+import { NavLinks } from './NavLinks'
 import AuthButtons from '../AuthButton'
 import { navItems } from '@/app/seed/navLinks'
 import { CreatorsNavMenu } from '../CreatorsDropDown'

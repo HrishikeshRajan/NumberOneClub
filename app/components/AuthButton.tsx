@@ -1,10 +1,10 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
-import CustomButton from "./ui/theme/CustomButton";
 import EnableClickAnimation from "./ui/animation/EnableClickAnimation";
 import { CustomDialog } from "./ui/modals/Modal";
 import Auth from "./auth/auth";
+import ThemedButton from "./ui/theme/button/ThemedButton";
+import clsx from "clsx";
 
 export default function AuthButtons() {
   const [activeButton, setActiveButton] = useState("login");
@@ -12,40 +12,34 @@ export default function AuthButtons() {
   return (
     <div className="hidden lg:flex items-center space-x-4">
       <EnableClickAnimation>
-        <CustomButton
-          variant={"ghost"}
-          customStyle={`border-2 text-lg font-semibold rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
-              ${
-                activeButton === "signup"
-                  ? "bg-Skobeloff text-white"
-                  : "hover:bg-Skobeloff hover:text-white"
-              } hover:text-white `}
-          asChild
-          onClick={() => setActiveButton("signup")}
-        >
-          <Link href="#" className="text-lg font-semibold">
-            Sign Up
-          </Link>
-        </CustomButton>
+      <ThemedButton
+        onClick={() => setActiveButton("signin")}
+          className={clsx(
+            'px-10 py-5',
+            {    
+            'bg-Skobeloff text-white': activeButton === "signin", 
+            'bg-transparent text-Skobeloff hover:bg-Skobeloff hover:text-white': activeButton !== "signin", 
+          }
+        )}
+         >
+          Sign in
+         </ThemedButton>
       </EnableClickAnimation>
 
       <CustomDialog
         triggerOn={
-          <CustomButton
-            variant={"ghost"}
-            customStyle={`border-2 text-lg font-semibold rounded-3xl text-Skobeloff border-Skobeloff nav-btn hover:bg-Skobeloff hover:text-white
-            ${
-              activeButton === "login"
-                ? "bg-Skobeloff text-white"
-                : "hover:bg-Skobeloff hover:text-white"
-            } hover:text-white`}
-            asChild
-            onClick={() => setActiveButton("login")}
-          >
-            <Link href="#" className="text-lg font-semibold">
-              Login
-            </Link>
-          </CustomButton>
+         <ThemedButton
+          onClick={() => setActiveButton("login")}
+          className={clsx(
+            'px-10 py-5',
+            {    
+            'bg-Skobeloff text-white': activeButton === "login", 
+            'bg-transparent text-Skobeloff hover:bg-Skobeloff hover:text-white': activeButton !== "login", 
+          }
+        )}
+         >
+          Login
+         </ThemedButton>
         }
         triggerText="login"
         triggerVariant="ghost"
