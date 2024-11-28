@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 import CustomButton from "./ui/theme/CustomButton";
 import EnableClickAnimation from "./ui/animation/EnableClickAnimation";
-import { InputOTPFields } from "./auth/Otp";
 import { CustomDialog } from "./ui/modals/Modal";
 import Auth from "./auth/auth";
 

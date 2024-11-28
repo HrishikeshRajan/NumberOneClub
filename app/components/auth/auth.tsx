@@ -5,7 +5,7 @@ import { InputOTPFields } from './Otp'
 
 function Auth() {
   
-    const [loginState, setLoginState] = useState<'input' | 'opt' | 'failed'| 'success'>('input')
+    const [loginState] = useState<'input' | 'opt' | 'failed'| 'success'>('input')
 
     return (
     <div className='flex w-full  max-w-md items-center justify-center'>
