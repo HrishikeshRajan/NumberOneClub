@@ -6,9 +6,9 @@ interface JellyButtonProps {
   children: React.ReactNode;
   className?: string;
 }
-const itemVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+const itemVariants  = {
+    hidden: { scale: 0.9, opacity: 0 },
+    visible: { scale: 1, opacity: 1,   transition: { type: "spring", stiffness: 100  } },
   };
 
 

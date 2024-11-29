@@ -10,7 +10,7 @@ export const animations = {
     },
   },
   item: {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { scale: 0.5, opacity: 0 },
     visible: { 
       scale: 1, 
       opacity: 1, 
