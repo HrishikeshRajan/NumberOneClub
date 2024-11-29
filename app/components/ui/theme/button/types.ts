@@ -3,7 +3,8 @@ import { ButtonProps } from "@/components/ui/button";
 export enum COLORS  {
     skobeloff = 'skobeloff',
     darkslategray  = 'darkslategray',
-    sunglow =  'sunglow'
+    sunglow =  'sunglow',
+    mediumseagreen = 'mediumseagreen' 
 } 
 
 

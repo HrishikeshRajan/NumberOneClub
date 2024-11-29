@@ -75,6 +75,11 @@ type ThemeColors = {
       primary: 'sunglow',
       hover: 'sunglow',
       active: 'sunglow'
+    }),
+    mediumseagreen: createButtonTheme({
+      primary: 'mediumseagreen',
+      hover: 'mediumseagreen',
+      active: 'mediumseagreen'
     })
   };
 

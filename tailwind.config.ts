@@ -11,16 +11,16 @@ export default {
   theme: {
   	extend: {
   		colors: {
-			background: {
-				DEFAULT: 'hsl(var(--background))',
-				skobeloff: '#07636A',
-				sunglow:'#FFCA2C',
-				gainsboro: '#D0E4E5',
-				whitesmoke: '#EFEFF0',
-				cornsilk:'#FFF3CF80',
-				palegoldenrod: '#FFE8A1',
-				mediumseagreen: '#00C294'
-			},
+  			background: {
+  				DEFAULT: 'hsl(var(--background))',
+  				skobeloff: '#07636A',
+  				sunglow: '#FFCA2C',
+  				gainsboro: '#D0E4E5',
+  				whitesmoke: '#EFEFF0',
+  				cornsilk: '#FFF3CF80',
+  				palegoldenrod: '#FFE8A1',
+  				mediumseagreen: '#00C294'
+  			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -50,11 +50,11 @@ export default {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
-			border: {
-				DEFAULT: 'hsl(var(--border))',
-				skobeloff: '#07636A',
-				mediumseagreen: '#00C294'
-			},
+  			border: {
+  				DEFAULT: 'hsl(var(--border))',
+  				skobeloff: '#07636A',
+  				mediumseagreen: '#00C294'
+  			},
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			chart: {
@@ -64,53 +64,59 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			Skobeloff:'#07636A',
-			sliversand: "#C2C2C2",
-			darkslategray: '#006066',
-			darkgray: '#9A9A9A',
-			dimgray: '#6D6D6D',
-			sunglow:'#FFCA2C',
-			gray: '#797979',
-			gainsboro: '#D0E4E5',
-			whitesmoke: '#EFEFF0',
-			mediumseagreen: '#00C294',
-			
-			crystalsongblue:'#808080'
+  			Skobeloff: '#07636A',
+  			sliversand: '#C2C2C2',
+  			darkslategray: '#006066',
+  			darkgray: '#9A9A9A',
+  			dimgray: '#6D6D6D',
+  			sunglow: '#FFCA2C',
+  			gray: '#797979',
+  			gainsboro: '#D0E4E5',
+  			whitesmoke: '#EFEFF0',
+  			mediumseagreen: '#00C294',
+  			crystalsongblue: '#808080',
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)',
+  			sm: 'calc(var(--radius) - 4px)'
   		},
-		borderColor :{
-			sunglow:'#FFCA2C',
-		},
-		  fontFamily: {
-			euclid: ['var(--font-euclid)'],
-		  },
-		  fontWeight: {
-			light: '300',
-			regular: '400',
-			medium: '500',
-			bold: '700',
-		  },
-		  backgroundImage: {
-			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
-			'green-gradient': 'linear-gradient(133.91deg, #00C294 3.7%, #043C40 78.93%)',
-			'yellow-gradient': 'linear-gradient(134.82deg, #FBC926 10.5%, #C27741 71.77%)',
-			'blue-gradient': 'linear-gradient(134.82deg, #E3B9F2 10.5%, #794C8E 71.77%)',
-		  },
-		  boxShadow: {
-			'search-bar': '0px 0px 12.73px 0px #FFCA2C80',
-			 'category': '0px 0px 25px 0px #0000001A',
-			 'instructor-card-shadow': '0px 3.55px 17.74px 0px #0000001A',
-			 'booking-card-shadow' : '0px 0px 21.99px 0px #0000001A',
-			 'skobeloff' :'0px 4px 6px rgba(7, 99, 106, 0.5)'
-
-
-		  }
-  	},
-
+  		borderColor: {
+  			sunglow: '#FFCA2C'
+  		},
+  		fontFamily: {
+  			euclid: ['var(--font-euclid)']
+  		},
+  		fontWeight: {
+  			light: '300',
+  			regular: '400',
+  			medium: '500',
+  			bold: '700'
+  		},
+  		backgroundImage: {
+  			'main-gradient': 'linear-gradient(180deg, #F0F0F0 0%, #FFFFFF 100%)',
+  			'green-gradient': 'linear-gradient(133.91deg, #00C294 3.7%, #043C40 78.93%)',
+  			'yellow-gradient': 'linear-gradient(134.82deg, #FBC926 10.5%, #C27741 71.77%)',
+  			'blue-gradient': 'linear-gradient(134.82deg, #E3B9F2 10.5%, #794C8E 71.77%)'
+  		},
+  		boxShadow: {
+  			'search-bar': '0px 0px 12.73px 0px #FFCA2C80',
+  			category: '0px 0px 25px 0px #0000001A',
+  			'instructor-card-shadow': '0px 3.55px 17.74px 0px #0000001A',
+  			'booking-card-shadow': '0px 0px 21.99px 0px #0000001A',
+  			skobeloff: '0px 4px 6px rgba(7, 99, 106, 0.5)'
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
