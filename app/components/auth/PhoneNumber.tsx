@@ -8,18 +8,25 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image'
 
-function PhoneNumber() {
+function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
   const [selected, setSelected] = useState("");
 
-  function handleChange(value: string) {
-    setSelected(value);
+  function handleChange(val: string) {
+    const value = val.trim()
+    if (!value.startsWith('+')) {
+      setSelected(`+${value}`);
+    } else {
+      setSelected(value);
+    }
   }
 
 
-  function submitPhoneNumber(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    e.preventDefault()
-    console.log(selected)
-  }
+  // function submitPhoneNumber(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  //   e.preventDefault()
+  //   console.log(selected)
+  // }
+
+
 
   return (
     <Card className="w-full h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
@@ -40,12 +47,17 @@ function PhoneNumber() {
          <div className='w-full relative'>
          <PhoneInput
           country={'in'}
-          onChange={handleChange}
+          onChange={(e) => {
+            console.log(e)
+            handleChange(e);
+          }}
           inputProps={{
             name: 'phone',
             required: true,
             autoFocus: true,
+
           }}
+          prefix='+'
           containerClass='w-full'
           buttonStyle={{backgroundColor:'transparent', border:'none'}}
           inputStyle={{width:"100%", padding:'1.3rem', textIndent: '1.3rem', borderColor:'#00C294', borderRadius:'9px'}}
@@ -58,7 +70,7 @@ function PhoneNumber() {
   
         {/* Sign-in Button */}
         <EnableClickAnimation className='w-full' > 
-        <CustomButton onClick={(e) => submitPhoneNumber(e)} className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
+        <CustomButton onClick={() => onSubmit(selected)} className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
                 Sign in
         </CustomButton>
         </EnableClickAnimation>

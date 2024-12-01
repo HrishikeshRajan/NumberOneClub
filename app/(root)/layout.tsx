@@ -1,5 +1,6 @@
+import SideSheetAbstract from "../components/abstracts/SidebarAbstract"
 import Navbar from "../components/navbar/Navbar"
-import SideSheet from "../components/ui/modals/SideSheet"
+import { SideSheetProvider } from "../components/ui/context/SideSheetContext"
 
 export default function Layout({
     children
@@ -9,8 +10,11 @@ export default function Layout({
     return (
       <main>
         <Navbar />
-        <SideSheet />
+        <SideSheetProvider>
+        <SideSheetAbstract />
         {children}
+        </SideSheetProvider>
+     
       </main>
     )
   }

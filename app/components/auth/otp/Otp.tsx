@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
@@ -20,6 +20,10 @@ export function OTPInput({
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const verifyButtonRef = useRef<HTMLButtonElement | null>(null);
 
+  useEffect(() => {
+
+    inputRefs?.current[0]?.focus();
+  }, []);
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     index: number

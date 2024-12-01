@@ -1,47 +1,43 @@
 
 import {
-    Dialog,
+  Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-
+import { cn } from "@/lib/utils";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 type DialogProps = {
-  triggerText: string;
-  triggerVariant?: "outline" | "link" | "default" | "destructive" | "secondary" | "ghost" | null | undefined;
   dialogTitle: string;
   dialogDescription?: string;
-  content?: React.ReactNode;
-  footer?: React.ReactNode;
-  triggerOn?:React.ReactNode;
+  open?: boolean;
+  setOpen: (state:boolean) => void;
+  children?: React.ReactNode;
+  className?:string;
 };
 
 export function CustomDialog({
   dialogTitle,
   dialogDescription,
-  content,
-  footer,
-  triggerOn
+  open,
+  setOpen,
+  className,
+  children,
 }: DialogProps) {
   return (
-    <Dialog>
-      {/* Trigger Button */}
-      <DialogTrigger asChild>
-         {triggerOn}
-      </DialogTrigger>
-
-      {/* Dialog Content */}
-      <DialogContent className="w-full bg-transparent ring-0 border-0">
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent className={cn('max-w-sm xl:max-w-lg flex justify-center items-center bg-transparent shadow-none rounded-3xl outline-none focus-visible:outline-none ring-0 border-0 p-0 mx-auto gap-0', className)}>
         <DialogHeader>
+        <VisuallyHidden.Root>
           <DialogTitle>{dialogTitle}</DialogTitle>
-          {dialogDescription && <DialogDescription>{dialogDescription}</DialogDescription>}
+          </VisuallyHidden.Root>
+          <VisuallyHidden.Root>
+            <DialogDescription>{dialogDescription}</DialogDescription>
+          </VisuallyHidden.Root>
         </DialogHeader>
-        {content}
-        {footer && <DialogFooter>{footer}</DialogFooter>}
+        {children}
       </DialogContent>
     </Dialog>
   );
