@@ -5,8 +5,9 @@ import {
     Settings2,
     SquareTerminal,
   } from "lucide-react"
+import SidebarGroupWrapper from "../components/dashboard/sidebar/Group"
 
-export const navMain =  [
+export const navMain:SidebarGroupWrapper[] =  [
     {
       title: "Events",
       url: "#",

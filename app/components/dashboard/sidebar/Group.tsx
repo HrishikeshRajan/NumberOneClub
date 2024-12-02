@@ -8,7 +8,7 @@ type SidebarGroupWrapper =
         title: string;
         url: string;
         icon?: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
-        isActive: boolean;
+        isActive?: boolean;
         items?: SidebarGroupWrapper[];
     }
 
