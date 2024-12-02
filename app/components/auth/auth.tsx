@@ -74,7 +74,7 @@ function Auth({ onOver }: AuthProps) {
                 transition={{ type: "spring", stiffness: 100 }}
                 className="absolute inset-0 w-full"
               >
-                <OTPInput onVerify={handleOtpVerify} phoneNumber={phoneNumber} back={back} />
+                <OTPInput onVerify={handleOtpVerify} phoneNumber={phoneNumber} back={back} onChangeNumber={() => back()} />
               </motion.div>
             )}
             {step === 3 && (
