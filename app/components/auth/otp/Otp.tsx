@@ -122,8 +122,8 @@ export function OTPInput({
             />
           ))}
         </motion.div>
-          <div className="flex items-center justify-start text-mediumseagreen font-semibold gap-5 w-full">
-          <span>Time Remaining</span> <OTPTimer onTimeEnd={back} />
+          <div className="flex items-center justify-start text-mediumseagreen gap-5 w-full">
+          <span className="text-xs font-thin">Time Remaining</span> <OTPTimer onTimeEnd={back} />
           </div>
         <JellyButton className="w-full">
           <EnableClickAnimation>
