@@ -11,4 +11,6 @@ export interface OTPInputProps {
     inputRef: (el: HTMLInputElement | null) => void;
     onInputChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
     onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>, index: number) => void;
+    className?:string;
+    wrapperClassName?:string;
   }

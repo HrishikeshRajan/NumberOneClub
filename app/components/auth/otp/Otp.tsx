@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, Variants } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
+import { motion } from 'framer-motion';
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { animations, OTP_LENGTH } from "./config";
@@ -11,8 +11,9 @@ import { Heading } from "../../Heading";
 import JellyButton from "../../ui/animation/EnableJiggleAnimation";
 import EnableClickAnimation from "../../ui/animation/EnableClickAnimation";
 import ThemedButton from "../../ui/theme/button/ThemedButton";
-import useTimer from "@/hooks/useTimer";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import OTPTimer from "../OTPTimer";
 
 export function OTPInput({ 
   phoneNumber, 
@@ -22,6 +23,7 @@ export function OTPInput({
 }: OTPInputProps) {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const verifyButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [optError, setOptError] = useState(false)
 
   useEffect(() => {
 
@@ -55,42 +57,26 @@ export function OTPInput({
     }
   };
 
+
   const handleVerify = () => {
     const otp = inputRefs.current
-      .map(input => input?.value)
+      .map((input) => input?.value)
       .join('');
+
+      if(otp.length < 6){
+        setOptError(true)
+        toast.error('Please enter your OTP',{
+          richColors:true,
+          position: 'top-center'
+        })
+        return
+      }
+      setOptError(false)
     onVerify?.(otp);
   };
 
 
-  const [time] = useTimer({upperLimit:10})
 
-
-  useEffect(() => {
-    if (time === 0) {
-      if(back){
-        toast.error('OTP has Expired',{
-          description :'Please try to login again',
-          className:"p-5",
-          descriptionClassName:'text-red-300',
-           richColors: true,
-           position: 'top-center'
-
-        })
-        back()
-      }
-    }
-  }, [back, time]); 
-  const minutes = `${Math.floor(time / 60)}`.padStart(2, "0");
-  const seconds = `${time % 60}`.padStart(2, "0");
-
-  const digitAnimation = {
-    initial: { scale: 1, opacity: 1 },
-    animate: { scale: [1.2, 0.9, 1], opacity: [1, 0.5, 1] },
-    transition: { duration: 0.5, ease: "easeInOut" },
-  };
-
- 
   return (
     <Card className="w-full h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
       <Heading
@@ -107,16 +93,8 @@ export function OTPInput({
             </span>{" "}
             on WhatsApp
           </span>
-
-          <span className="flex items-center space-x-1 text-red-600 shadow-red-300 text-lg font-bold">
-              <motion.span {...digitAnimation}  key={time + 1}>
-                {minutes}
-              </motion.span>
-              <span>:</span>
-              <motion.span {...digitAnimation} key={`${time + 4}`}>
-                {seconds}
-              </motion.span>
-            </span>
+          
+          <OTPTimer onTimeEnd={back} />
           <Link
             href="#"
             onClick={onChangeNumber}
@@ -139,6 +117,8 @@ export function OTPInput({
               inputRef={(el) => (inputRefs.current[index] = el)}
               onInputChange={handleInputChange}
               onKeyDown={handleKeyDown}
+              wrapperClassName={cn('',optError ? 'border-red-500 shadow-sm shadow-red-300' : 'boder-green-500')}
+
             />
           ))}
         </motion.div>
