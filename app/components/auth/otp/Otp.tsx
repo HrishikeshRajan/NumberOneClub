@@ -94,7 +94,7 @@ export function OTPInput({
             on WhatsApp
           </span>
           
-          <OTPTimer onTimeEnd={back} />
+        
           <Link
             href="#"
             onClick={onChangeNumber}
@@ -122,7 +122,9 @@ export function OTPInput({
             />
           ))}
         </motion.div>
-
+          <div className="flex items-center justify-start text-mediumseagreen font-semibold gap-5 w-full">
+          Time Remaning <OTPTimer onTimeEnd={back} />
+          </div>
         <JellyButton className="w-full">
           <EnableClickAnimation>
             <ThemedButton
