@@ -70,7 +70,7 @@ export function OTPInput({
     if (time === 0) {
       if(back){
         toast.error('OTP has Expired',{
-          description :'Please login again',
+          description :'Please try to login again',
           className:"p-5",
           descriptionClassName:'text-red-300',
            richColors: true

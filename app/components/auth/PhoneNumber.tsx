@@ -7,9 +7,11 @@ import CustomButton from '../ui/theme/CustomButton'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
   const [selected, setSelected] = useState("");
+  const [isEmpty, setIsEmpty] =  useState(false)
 
   function handleChange(val: string) {
     const value = val.trim()
@@ -26,7 +28,7 @@ function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
   //   console.log(selected)
   // }
 
-
+ const borderColor = isEmpty ? "red" : "#00C294"
 
   return (
     <Card className="w-full h-auto pb-5 bg-white font-euclid rounded-3xl px-5 shadow-md">
@@ -48,7 +50,7 @@ function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
          <PhoneInput
           country={'in'}
           onChange={(e) => {
-            console.log(e)
+            setIsEmpty(false)
             handleChange(e);
           }}
           inputProps={{
@@ -60,8 +62,8 @@ function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
           prefix='+'
           containerClass='w-full'
           buttonStyle={{backgroundColor:'transparent', border:'none'}}
-          inputStyle={{width:"100%", padding:'1.3rem', textIndent: '1.3rem', borderColor:'#00C294', borderRadius:'9px'}}
-          inputClass='text-crystalsongblue'
+          inputStyle={{width:"100%", padding:'1.3rem', textIndent: '1.3rem', borderColor:borderColor, borderRadius:'9px'}}
+          inputClass='text-crystalsongblue border-red-500'
           enableSearch={true}
         />
 
@@ -70,7 +72,20 @@ function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
   
         {/* Sign-in Button */}
         <EnableClickAnimation className='w-full' > 
-        <CustomButton onClick={() => onSubmit(selected)} className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
+        <CustomButton onClick={() =>{
+
+          if(!selected){
+            setIsEmpty(true)
+            toast.error('Please enter your phone numer',{
+              richColors:true
+            })
+          }
+          else{
+            setIsEmpty(false)
+  
+            onSubmit(selected)
+          }
+        }} className="w-full max-w-full mt-4 text-white bg-mediumseagreen rounded-lg py-6  font-semibold text-sm md:text-base active:bg-mediumseagreen focus:outline-none focus-visible:ring-2 hover:bg-mediumseagreen ">
                 Sign in
         </CustomButton>
         </EnableClickAnimation>

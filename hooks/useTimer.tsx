@@ -14,7 +14,9 @@ const useTimer = ({upperLimit = 180}:{upperLimit:number}) => {
                     return time - 1
                 }
             })
-        },1000)
+        },1000);
+
+       return () => clearInterval(timer)
      }, [])
   return [time]
 }
