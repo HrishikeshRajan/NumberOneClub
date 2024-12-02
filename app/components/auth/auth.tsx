@@ -6,6 +6,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import PhoneNumber from "./PhoneNumber";
 import Success from "./Success";
 import { fakeSendOTPApi, fakeVerifyOTPApi } from "@/mocks/api/auth";
+import { opacity } from "../ui/theme/button/theme.config";
+import { toast } from "sonner";
+import { Clock } from "lucide-react";
 
 type AuthProps = {
   onOver: (state:boolean) => void;
@@ -17,6 +20,11 @@ function Auth({onOver }:AuthProps) {
   const [step, setStep] = useState(1);
   const [opt, setOtp] = useState<string>("");
 
+
+
+  function back(){
+    setStep(1)
+  }
   async function handlePhoneNumberSubmit(number: string) {
     try {
       setPhoneNumber(number);
@@ -46,6 +54,7 @@ function Auth({onOver }:AuthProps) {
   function handleCloseModal(state:boolean) {
     onOver(state)
   }
+
   return (
     <div className="flex flex-col inset-0  mx-0 z-10 w-full">
       <AnimatePresence>
@@ -53,7 +62,7 @@ function Auth({onOver }:AuthProps) {
               <motion.div
               initial={{ scale: .8 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              exit={{ scale: 0.8, opacity:0 }}
               transition={{ type: "spring", stiffness: 100 }}
               className="w-full max-auto"
             >
@@ -65,17 +74,17 @@ function Auth({onOver }:AuthProps) {
           <motion.div
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
-          exit={{ scale: 0.8 }}
+          exit={{ scale: 0.8 , opacity:0}}
           transition={{ type: "spring", stiffness: 100 }}
           className="w-full"
           > 
-            <OTPInput key="otp" onVerify={handleOtpVerify} /> 
+            <OTPInput key="otp" onVerify={handleOtpVerify} back={back} /> 
           </motion.div>
         )}
               {step === 3 && (  <motion.div
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
+                exit={{ scale: 0.8, opacity:0 }}
                 transition={{ type: "spring", stiffness: 100 }}
                 className="w-full"
                 > 

@@ -3,6 +3,7 @@ export interface OTPInputProps {
     phoneNumber?: string;
     onVerify?: (otp: string) => void;
     onChangeNumber?: () => void;
+    back?:() => void;
   }
   
   export interface OTPSlotProps {
