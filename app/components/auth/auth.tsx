@@ -6,8 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import PhoneNumber from "./PhoneNumber";
 import Success from "./Success";
 import { fakeSendOTPApi, fakeVerifyOTPApi } from "@/mocks/api/auth";
-import { Dialog, DialogClose } from "@/components/ui/dialog";
-
 
 type AuthProps = {
   onOver: (state:boolean) => void;

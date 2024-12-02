@@ -9,8 +9,9 @@ export default function Layout({
   }>) {
     return (
       <main>
-        <Navbar />
+       
         <SideSheetProvider>
+        <Navbar />
         <SideSheetAbstract />
         {children}
         </SideSheetProvider>

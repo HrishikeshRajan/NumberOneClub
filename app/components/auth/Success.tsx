@@ -34,7 +34,7 @@ function Success({  callback }: SucessProps) {
 
     // Cleanup the timeout if the component unmounts
     return () => clearTimeout(timeout);
-  }, [callback, router]);
+  }, [callback, closeSheet, router]);
 
   return (
     <AuthWrapper className=" w-full max-w-[539px] flex items-center justify-center flex-col py-5">
