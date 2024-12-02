@@ -1,11 +1,5 @@
 import {
-  Calendar,
   ChevronUp,
-  Home,
-  Inbox,
-  Plus,
-  Search,
-  Settings,
   User2,
 } from "lucide-react";
 
@@ -14,9 +8,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupAction,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -41,9 +32,9 @@ import { navMain } from "@/app/seed/dashboardSiderbarSeedGroup1";
 
 
 
-export function AppSidebar() {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar variant="sidebar" collapsible="icon">
+    <Sidebar variant="sidebar" collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -75,7 +66,7 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-100" >
 
         {/* Group 1  */}
         <SidebarGroupWrapper items={navMain} groupLabel="Activities" />
