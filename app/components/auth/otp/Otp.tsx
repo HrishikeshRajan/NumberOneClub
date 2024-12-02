@@ -73,7 +73,8 @@ export function OTPInput({
           description :'Please try to login again',
           className:"p-5",
           descriptionClassName:'text-red-300',
-           richColors: true
+           richColors: true,
+           position: 'top-center'
 
         })
         back()

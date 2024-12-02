@@ -76,8 +76,9 @@ function PhoneNumber({onSubmit}:{ onSubmit: (number: string) => void}) {
 
           if(!selected){
             setIsEmpty(true)
-            toast.error('Please enter your phone numer',{
-              richColors:true
+            toast.error('Please enter your whatsapp numer',{
+              richColors:true,
+              position: 'top-center'
             })
           }
           else{
