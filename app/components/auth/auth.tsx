@@ -5,7 +5,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PhoneNumber from "./PhoneNumber";
 import Success from "./Success";
-import { fakeSendOTPApi, fakeVerifyOTPApi } from "@/mocks/api/auth";
+import axios from "axios";
+import { toast } from "sonner";
 
 type AuthProps = {
   onOver: (state: boolean) => void;
@@ -14,34 +15,75 @@ type AuthProps = {
 function Auth({ onOver }: AuthProps) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [step, setStep] = useState(1);
-  const [opt, setOtp] = useState<string>("");
 
   function back() {
     setStep(1);
   }
+
   async function handlePhoneNumberSubmit(number: string) {
     try {
       setPhoneNumber(number);
-      const response = await fakeSendOTPApi(number);
-      setOtp(response.otp);
-      setStep(2);
-    } catch (error) {
-      if (error instanceof Error) {
-        alert(`Error during phone number verification: ${error.message}`);
+
+      const response = await axios.post("/api/auth/login", {
+        phoneNumber: number,
+      });
+
+      if (!response.data || !response.status) {
+        toast.error("OTP not sent. Please try again later.", {
+          richColors: true,
+        });
+      } else {
+        setStep(2);
+      }
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        return toast.error("Failed to sign in. Please try again later.", {
+          richColors: true,
+        });
+      } else if (error instanceof Error) {
+        return toast.error("Failed to sign in. Please try again later.", {
+          richColors: true,
+        });
+      } else {
+        return toast.error("Something went wrong. Please try again later.", {
+          richColors: true,
+        });
       }
     }
   }
 
-  async function handleOtpVerify() {
+  async function handleOtpVerify(number: string) {
     try {
-      await fakeVerifyOTPApi({ otp: opt, phoneNumber });
-      setStep(2);
-    } catch (error) {
-      if (error instanceof Error) {
-        alert(`Error during phone number verification: ${error.message}`);
+      const response = await axios.post("/api/auth/verify", {
+        phoneNumber: phoneNumber,
+        otp:number
+      });
+
+      if (!response.data || !response.status) {
+        toast.error("OTP not sent. Please try again later.", {
+          richColors: true,
+        });
+      } else {
+        setStep(3);
+      }
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        return toast.error(error?.response?.data?.error, {
+          richColors: true,
+          position: "top-center",
+        });
+      } else if (error instanceof Error) {
+        return toast.error("Failed to verify OTP. Please try again later.", {
+          richColors: true,
+          position: "top-center",
+        });
+      } else {
+        return toast.error("Something went wrong. Please try again later.", {
+          richColors: true,
+          position: "top-center",
+        });
       }
     }
-    setStep(3);
   }
 
   function handleCloseModal(state: boolean) {
@@ -74,7 +116,12 @@ function Auth({ onOver }: AuthProps) {
                 transition={{ type: "spring", stiffness: 100 }}
                 className="absolute inset-0 w-full"
               >
-                <OTPInput onVerify={handleOtpVerify} phoneNumber={phoneNumber} back={back} onChangeNumber={() => back()} />
+                <OTPInput
+                  onVerify={handleOtpVerify}
+                  phoneNumber={phoneNumber}
+                  back={back}
+                  onChangeNumber={() => back()}
+                />
               </motion.div>
             )}
             {step === 3 && (

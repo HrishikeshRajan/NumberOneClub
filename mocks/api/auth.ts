@@ -1,24 +1,51 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const OTP = '123456'
-export async function fakeSendOTPApi(phoneNumber: string) {
-    return new Promise<{ otp: string; message: string; phoneNumber: string }>(
+export async function fakeSendOTPApi({phoneNumber, fail = false}: {phoneNumber:number, fail?:boolean}) {
+try {
+  
+  if(fail){
+    return new Promise<{ status:boolean; message: string }>(
       (resolve, reject) => {
-        // Simulate a network delay
         setTimeout(() => {
-          // Simulate success and return mock data
           if (phoneNumber) {
-            resolve({
-              otp:  OTP, // Simulated OTP
-              message: 'OTP sent successfully!',
-              phoneNumber, // Echo the input phone number
+            reject({
+              status:false,
+              message: 'OTP sent failed',
             });
           } else {
-            // Simulate an error response
             reject(new Error('Phone number is required'));
           }
-        }, 1000); // 1-second delay
+        }, 1000);
+      }
+    );
+  }else{
+    return new Promise<{ status:boolean; message: string }>(
+      (resolve, reject) => {
+        setTimeout(() => {
+          if (phoneNumber) {
+            resolve({
+              status:true,
+              message: 'OTP sent failed',
+            });
+          } else {
+            reject(new Error('Phone number is required'));
+          }
+        }, 1000);
       }
     );
   }
+} catch (error:unknown) {
+
+if(error instanceof Error) {
+  console.log(error.message)
+  return  {
+    status: false,
+  message: `Failed to send OTP ${error?.message}`,
+}
+}
+  
+}
+}
 
   export async function fakeVerifyOTPApi({
     phoneNumber,
@@ -27,18 +54,25 @@ export async function fakeSendOTPApi(phoneNumber: string) {
     phoneNumber: string;
     otp: string;
   }) {
-    return new Promise<unknown>((resolve, reject) => {
+
+ try {
+
+  console.log(otp, OTP)
+  if(otp !== OTP){
+    return new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-        // Check if the OTP is valid
-        if (!otp || otp !== OTP) {
           reject({
             status: false,
-            message: 'Invalid OTP provided.',
+            message: 'OTP verification failed',
           });
-          return;
-        }
-  
-        // Simulate success and return mock data
+        
+      }, 1000);
+    });
+  }else{
+    return new Promise<any>((resolve) => {
+
+      setTimeout(() => {
+
         if (phoneNumber) {
           resolve({
             status: true,
@@ -46,13 +80,17 @@ export async function fakeSendOTPApi(phoneNumber: string) {
             accessToken: '1212312321adsadsada',
             refreshToken: 'eeqweqwewqedwqedwdw',
           });
-        } else {
-          // Reject if the phone number is missing
-          reject({
-            status: false,
-            message: 'Phone number is required.',
-          });
         }
-      }, 1000); // 1-second delay
+      }, 1000);
     });
+  }
+ } catch (error: unknown) {
+  if(error instanceof Error) {
+    console.log(error.message)
+    return  {
+      status: false,
+    message: `Failed to send OTP ${error?.message}`,
+  }
+  }
+ }
   }
