@@ -1,7 +1,9 @@
-import MentorshipDetails from "@/app/components/instructor/Membership";
+// import MentorshipDetails from "@/app/components/instructor/Membership";
 import ProfileSection from "@/app/components/instructor/Profile";
+import OfferCard from "@/app/components/offering/OfferCard";
+import ThemedButton from "@/app/components/ui/theme/button/ThemedButton";
+import Image from "next/image";
 import React from "react";
-
 
 const MentorshipCard: React.FC = () => {
   return (
@@ -21,7 +23,7 @@ const MentorshipCard: React.FC = () => {
       />
 
       {/* Right Section */}
-      <MentorshipDetails
+      {/* <MentorshipDetails
         title="1:1 Mentorship"
         tags={["Popular", "Accounting", "Malayalam"]}
         description="Do you have a major interview due soon but feel unprepared and anxious? Book a 1:1 call with me where I provide step-by-step actionable and practical tips to move past these momentary blocks and ace your next interview."
@@ -32,7 +34,35 @@ const MentorshipCard: React.FC = () => {
         ]}
         price={1800}
         duration={30}
-      />
+      /> */}
+      <div className="flex bg-red-500w-full
+        <OfferCard>
+          {/* <VideoConference /> */}
+          <div className="bg-whitesmoke">
+            <div className="flex items-center gap-1 lg:gap-3">
+              <div className="text-gray-500">
+                <Image
+                  src="/calander.svg"
+                  alt="calender"
+                  width={5}
+                  height={5}
+                  className="w-5"
+                />
+              </div>
+              <span className=" text-xs hidden lg:flex font-medium text-gray">
+                Video Conference
+              </span>
+            </div>
+            <ThemedButton
+          className='text-white text-xs'
+               colorTheme='skobeloff'
+               aria-label="Price button"
+          >
+               ₹800
+          </ThemedButton>
+          </div>
+        </OfferCard>
+      </div>
     </div>
   );
 };
